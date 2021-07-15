@@ -21,19 +21,19 @@ console.log("Olá,", nome ,"você tem" , idade , "anos.")
 
 
 //Exercício 2
-let celular = prompt("Você está lendo através de um celular? - ")
-console.log(celular)
+let perguntas = (prompt("Você está lendo através de um celular? - "), prompt("Entrou em alguma rede social hoje?"), prompt("Está se sentindo bem?"))
+console.log(perguntas)
 
-let tempo = prompt("Está se sentindo bem hoje? - ")
-console.log(tempo)
 
 //Exercício 3
 
 let a = 10
 let b = 25
+let c
 
+c = a
 a = b
-b = 10
+b = c
 
 console.log("O novo valor de a é", a)
 console.log("O novo valor de b é", b)
