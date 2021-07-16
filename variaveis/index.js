@@ -21,10 +21,17 @@ console.log("Olá,", nome ,"você tem" , idade , "anos.")
 
 
 //Exercício 2
-let perguntas = (prompt("Você está lendo através de um celular? - "), prompt("Entrou em alguma rede social hoje?"), prompt("Está se sentindo bem?"))
-console.log(perguntas)
+let primeiraPergunta = prompt("Está lendo através de um celular?")
+let segundaPergunta = prompt("Acessou alguma rede social hoje?")
+let terceiraPergunta = prompt("Seu dia foi bom?")
 
+let respostaUm = primeiraPergunta
+let respostaDois = segundaPergunta
+let respostaTres = terceiraPergunta
 
+console.log("Está lendo através de um celular?", respostaUm)
+console.log("Acessou alguma rede social hoje?", respostaDois)
+console.log("Seu dia foi bom?", respostaTres)
 //Exercício 3
 
 let a = 10
