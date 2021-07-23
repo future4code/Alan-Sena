@@ -17,7 +17,7 @@ const nomeDoUsuario = prompt("Digite seu nome.")
 const emailDoUsuario = prompt("Digite seu e-mail.")
 
 console.log('O e-mail '+ emailDoUsuario + ' foi cadastrado com sucesso. Seja bem-vinda(o), ' + nomeDoUsuario + '!')
-a forma de fazer com o dolar não funcionou aqui
+//a forma de fazer com o dolar não funcionou aqui
 
 //Exercício 2
 
