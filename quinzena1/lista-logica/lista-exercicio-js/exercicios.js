@@ -40,7 +40,6 @@ function imprimeIdade() {
 
 // Exercício 3
 function calculaIMC() {
-  // escreva seu código aqui
 
  const peso = prompt("Digite seu peso.")
  const altura = prompt("Digite sua altura.")
@@ -50,7 +49,7 @@ function calculaIMC() {
 
 // Exercício 4
 function imprimeInformacoesUsuario() {
-  // escreva seu código aqui
+  
 
   let nomeUsuario = prompt("Digite o seu nome.")
   let idadeUsuario = prompt("Digite a sua idade.")
@@ -61,8 +60,7 @@ function imprimeInformacoesUsuario() {
 
 // Exercício 5
 function imprimeTresCoresFavoritas() {
-  // escreva seu código aqui
-
+  
   let corFav = prompt("Qual a sua cor vavorita?")
   let corFav2 = prompt("Qual a sua segunda cor favorita?")
   let corFav3 = prompt("Qual a sua terceira cor favorita?")
@@ -73,7 +71,7 @@ function imprimeTresCoresFavoritas() {
 
 // Exercício 6
 function retornaStringEmMaiuscula() {
-  // escreva seu código aqui
+  
 
   let time = prompt("Qual  seu time favorito?")
 
@@ -83,8 +81,7 @@ function retornaStringEmMaiuscula() {
 
 // Exercício 7
 function calculaIngressosEspetaculo() {
-  // escreva seu código aqui
-
+  
   const custo = prompt("Qual é o custo do teatro?")
   const valorIngresso = prompt("Qual o preço do ingresso")
 
@@ -95,17 +92,44 @@ function calculaIngressosEspetaculo() {
 
 // Exercício 8
 function checaStringsMesmoTamanho() {
-  // escreva seu código aqui
+ 
+  const string1 = prompt("Digete uma palavra aletória.")
+  const string2 = prompt("Digite outra palavra aleatória.")
+
+  const tamanho1 = string1.length
+  const tamanho2 = string2.length
+  
+  console.log(tamanho1 == tamanho2)
 }
 
 // Exercício 9
 function checaIgualdadeDesconsiderandoCase() {
-  // escreva seu código aqui
+
+  let palavra1 = prompt("Didite uma palavra.")
+  let palavra2 = prompt("Digite outra palavra.")
+
+  let comparacao = (palavra1 != palavra2) && (palavra1 !== palavra2)
+  
+  console.log(comparacao)
+
 }
 
 // Exercício 10
 function checaRenovacaoRG() {
-  // escreva seu código aqui
+  
+  const anoDeNascimento = prompt("Qual ano você nasceu?")
+  const anoAtual = prompt("Digite o ano atual")
+  const anoIdentidade = prompt("Digite o ano de emissão da sua carteira de identidade.")
+  
+  // Calculo da idade e tempo de emissão da identidade
+  let idade = anoAtual - anoDeNascimento
+  let tempoIdentidade = anoAtual - anoIdentidade
+  
+
+  let idade20 = idade <= 20
+  let idade20A50 = (idade > 20) < 50
+  let idadeMaior50 = idade > 50
+
 }
 
 // Exercício 11
@@ -115,5 +139,14 @@ function checaAnoBissexto() {
 
 // Exercício 12
 function checaValidadeInscricaoLabenu() {
-  // escreva seu código aqui
+ 
+  const idade = prompt("Você tem mais de 180 anos?")
+  const escolaridade = prompt("Você possui o ensino médio completo?")
+  const disponibilidade = prompt("VocÊ possui disponibilidade exclusiva durante os horários do curso?")
+
+  let idadeBoolean = (idade == 'sim')
+  let escolaridadeBoolean = (escolaridade == 'sim')
+  let disponibilidadeBoolean = (disponibilidade == 'sim')
+
+  console.log(idadeBoolean && escolaridadeBoolean && disponibilidadeBoolean)
 }
