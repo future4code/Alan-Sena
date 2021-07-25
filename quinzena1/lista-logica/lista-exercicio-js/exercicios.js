@@ -73,7 +73,6 @@ function imprimeTresCoresFavoritas() {
 function retornaStringEmMaiuscula() {
   
   let time = prompt("Qual  seu time favorito?")
-
   console.log(time.toUpperCase())
 
 }
