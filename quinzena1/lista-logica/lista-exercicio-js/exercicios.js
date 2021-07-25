@@ -72,7 +72,6 @@ function imprimeTresCoresFavoritas() {
 // Exercício 6
 function retornaStringEmMaiuscula() {
   
-
   let time = prompt("Qual  seu time favorito?")
 
   console.log(time.toUpperCase())
@@ -93,60 +92,68 @@ function calculaIngressosEspetaculo() {
 // Exercício 8
 function checaStringsMesmoTamanho() {
  
-  const string1 = prompt("Digete uma palavra aletória.")
+  const string1 = prompt("Digite uma palavra aleatória.")
   const string2 = prompt("Digite outra palavra aleatória.")
 
   const tamanho1 = string1.length
   const tamanho2 = string2.length
   
-  console.log(tamanho1 == tamanho2)
+  console.log(tamanho1 === tamanho2)
 }
 
 // Exercício 9
 function checaIgualdadeDesconsiderandoCase() {
 
-  let palavra1 = prompt("Didite uma palavra.")
-  let palavra2 = prompt("Digite outra palavra.")
+  const aleatorio = prompt("Digite uma palavra.")
+  const aleatorio2 = prompt("Digite outra palavra.")
 
-  let comparacao = (palavra1 != palavra2) && (palavra1 !== palavra2)
+  const conversao = aleatorio.toUpperCase()
+  const conversao1 = aleatorio2.toUpperCase()
+
+  const comparacao = conversao === conversao1
   
   console.log(comparacao)
-
 }
 
 // Exercício 10
 function checaRenovacaoRG() {
+  let anoAtual = Number(prompt("Digite o ano atual"))
+  let anoDeNascimento = Number(prompt("Digite o ano que você nasceu."))
+  let anoIdentidade = Number(prompt("Digite o ano de emissão da sua carteira de identidade."))
   
-  const anoDeNascimento = prompt("Qual ano você nasceu?")
-  const anoAtual = prompt("Digite o ano atual")
-  const anoIdentidade = prompt("Digite o ano de emissão da sua carteira de identidade.")
+  let idade = (anoAtual - anoDeNascimento)
+  let tempoEmissao = (anoAtual - anoIdentidade)
   
-  // Calculo da idade e tempo de emissão da identidade
-  let idade = anoAtual - anoDeNascimento
-  let tempoIdentidade = anoAtual - anoIdentidade
-  
+  let renovacao20 = idade <= 20 && tempoEmissao >= 5
+  let renovacao20A50 = (idade > 20) && (idade <= 50) && tempoEmissao >= 10
+  let renovacao50 = idade > 50 && tempoEmissao >= 15
+ 
+  let renovacao = renovacao20 || renovacao20A50 || renovacao50
 
-  let idade20 = idade <= 20
-  let idade20A50 = (idade > 20) < 50
-  let idadeMaior50 = idade > 50
-
+  console.log(renovacao)
 }
 
 // Exercício 11
 function checaAnoBissexto() {
-  // escreva seu código aqui
+  
+  const ano = Number(prompt("Digite o ano atual."))
+
+  const divisivel4 = ano % 4 === 0 && ano % 100 !== 0
+  const divisivel400 = ano % 400 === 0
+  
+  console.log(divisivel4 || divisivel400)
 }
 
 // Exercício 12
 function checaValidadeInscricaoLabenu() {
  
-  const idade = prompt("Você tem mais de 180 anos?")
+  const idade = prompt("Você tem mais de 18 anos?")
   const escolaridade = prompt("Você possui o ensino médio completo?")
-  const disponibilidade = prompt("VocÊ possui disponibilidade exclusiva durante os horários do curso?")
+  const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
 
-  let idadeBoolean = (idade == 'sim')
-  let escolaridadeBoolean = (escolaridade == 'sim')
-  let disponibilidadeBoolean = (disponibilidade == 'sim')
+  let idadeBoolean = (idade === 'sim')
+  let escolaridadeBoolean = (escolaridade === 'sim')
+  let disponibilidadeBoolean = (disponibilidade === 'sim')
 
   console.log(idadeBoolean && escolaridadeBoolean && disponibilidadeBoolean)
 }

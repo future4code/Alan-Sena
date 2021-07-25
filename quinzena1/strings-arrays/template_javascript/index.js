@@ -6,7 +6,9 @@
 // e. 3, 19, 5, 6, 7, 8, 9, 10, 11, 12, 13
 // f. 9
 
-//exercício 2:SUB NUM ONBUS EM MRROCOS 20
+//exercício 2:
+// SUBA NUM ONBUS EM MIRROCOS 27
+// Fiz a correção, pois interpretei errado o replaceaall e não me lembrava que o .langth contava os espaços.
 
 
 // Exercício de escrita de código
@@ -16,8 +18,8 @@
 const nomeDoUsuario = prompt("Digite seu nome.")
 const emailDoUsuario = prompt("Digite seu e-mail.")
 
-console.log('O e-mail '+ emailDoUsuario + ' foi cadastrado com sucesso. Seja bem-vinda(o), ' + nomeDoUsuario + '!')
-//a forma de fazer com o dolar não funcionou aqui
+console.log(`O e-mail ${emailDoUsuario} foi cadastrado com sucesso. Seja bem-vinda(o), ${nomeDoUsuario}!`)
+//Fiz a correção do tipo de concatenação com o dolar.
 
 //Exercício 2
 
@@ -53,5 +55,6 @@ let listaDeTarefa1 = listaDeTarefas
 
 let jaRealizado = prompt("Qual das três tarefas você já cumpriu? (Digite em Números)")
 
-let retirandoTarefa = listaDeTarefas1.splice(jaRealizado, 1)
-console.log(retirandoTarefas)
+let retirandoTarefa = listaDeTarefas1.splice(Number(jaRealizado, 1))
+console.log(listaDeTarefas)
+ // Fiz uma pequena correção na linha 58 convertendo em Number.
