@@ -40,7 +40,6 @@ function imprimeIdade() {
 
 // Exercício 3
 function calculaIMC() {
-  // escreva seu código aqui
 
  const peso = prompt("Digite seu peso.")
  const altura = prompt("Digite sua altura.")
@@ -50,7 +49,7 @@ function calculaIMC() {
 
 // Exercício 4
 function imprimeInformacoesUsuario() {
-  // escreva seu código aqui
+  
 
   let nomeUsuario = prompt("Digite o seu nome.")
   let idadeUsuario = prompt("Digite a sua idade.")
@@ -61,8 +60,7 @@ function imprimeInformacoesUsuario() {
 
 // Exercício 5
 function imprimeTresCoresFavoritas() {
-  // escreva seu código aqui
-
+  
   let corFav = prompt("Qual a sua cor vavorita?")
   let corFav2 = prompt("Qual a sua segunda cor favorita?")
   let corFav3 = prompt("Qual a sua terceira cor favorita?")
@@ -73,8 +71,7 @@ function imprimeTresCoresFavoritas() {
 
 // Exercício 6
 function retornaStringEmMaiuscula() {
-  // escreva seu código aqui
-
+  
   let time = prompt("Qual  seu time favorito?")
 
   console.log(time.toUpperCase())
@@ -83,8 +80,7 @@ function retornaStringEmMaiuscula() {
 
 // Exercício 7
 function calculaIngressosEspetaculo() {
-  // escreva seu código aqui
-
+  
   const custo = prompt("Qual é o custo do teatro?")
   const valorIngresso = prompt("Qual o preço do ingresso")
 
@@ -95,25 +91,69 @@ function calculaIngressosEspetaculo() {
 
 // Exercício 8
 function checaStringsMesmoTamanho() {
-  // escreva seu código aqui
+ 
+  const string1 = prompt("Digite uma palavra aleatória.")
+  const string2 = prompt("Digite outra palavra aleatória.")
+
+  const tamanho1 = string1.length
+  const tamanho2 = string2.length
+  
+  console.log(tamanho1 === tamanho2)
 }
 
 // Exercício 9
 function checaIgualdadeDesconsiderandoCase() {
-  // escreva seu código aqui
+
+  const aleatorio = prompt("Digite uma palavra.")
+  const aleatorio2 = prompt("Digite outra palavra.")
+
+  const conversao = aleatorio.toUpperCase()
+  const conversao1 = aleatorio2.toUpperCase()
+
+  const comparacao = conversao === conversao1
+  
+  console.log(comparacao)
 }
 
 // Exercício 10
 function checaRenovacaoRG() {
-  // escreva seu código aqui
+  let anoAtual = Number(prompt("Digite o ano atual"))
+  let anoDeNascimento = Number(prompt("Digite o ano que você nasceu."))
+  let anoIdentidade = Number(prompt("Digite o ano de emissão da sua carteira de identidade."))
+  
+  let idade = (anoAtual - anoDeNascimento)
+  let tempoEmissao = (anoAtual - anoIdentidade)
+  
+  let renovacao20 = idade <= 20 && tempoEmissao >= 5
+  let renovacao20A50 = (idade > 20) && (idade <= 50) && tempoEmissao >= 10
+  let renovacao50 = idade > 50 && tempoEmissao >= 15
+ 
+  let renovacao = renovacao20 || renovacao20A50 || renovacao50
+
+  console.log(renovacao)
 }
 
 // Exercício 11
 function checaAnoBissexto() {
-  // escreva seu código aqui
+  
+  const ano = Number(prompt("Digite o ano atual."))
+
+  const divisivel4 = ano % 4 === 0 && ano % 100 !== 0
+  const divisivel400 = ano % 400 === 0
+  
+  console.log(divisivel4 || divisivel400)
 }
 
 // Exercício 12
 function checaValidadeInscricaoLabenu() {
-  // escreva seu código aqui
+ 
+  const idade = prompt("Você tem mais de 18 anos?")
+  const escolaridade = prompt("Você possui o ensino médio completo?")
+  const disponibilidade = prompt("Você possui disponibilidade exclusiva durante os horários do curso?")
+
+  let idadeBoolean = (idade === 'sim')
+  let escolaridadeBoolean = (escolaridade === 'sim')
+  let disponibilidadeBoolean = (disponibilidade === 'sim')
+
+  console.log(idadeBoolean && escolaridadeBoolean && disponibilidadeBoolean)
 }
