@@ -5,7 +5,8 @@
 //2.a) O que vai ser impresso no console?
 //Resposta:19, 20, 21, 23, 25, 27, 30
 //b) Se eu quisesse acessar o índice de cada elemento dessa lista, o for...of... é suficiente? Se sim, o que poderia ser usado para fazer isso?
-//Resposta: 
+//Resposta: Não, teria que usar o for comum.
+
 /*3. 
   *
   **
@@ -21,8 +22,69 @@ if(bichinhos > 0){
     while((nomeBichinhos.length + 1) <= bichinhos){
     let perguntaNomes = prompt('Qual o nome deles?')
     nomeBichinhos.push(perguntaNomes)
+    console.log(nomeBichinhos)
+  }
 }
-}else{
-    console.log('Que pena! você pode adotar um pet.')
+else(bichinho === 0 ){
+  console.log('Que pena! Você pode adotar um pet.')
+} */
+
+//2.
+let original = [10, 31, 44, 65, 78, 99]
+/* //A.
+function valoresDoArray(valores) {
+  for(impressao of valores){
+    console.log(impressao)
+  }
 }
-console.log(nomeBichinhos) */
+valoresDoArray(original) */
+
+//B. 
+/* function dividirPorDez(valores) {
+  for(impressao of valores){
+    let divisao = (impressao / 10)
+    console.log(divisao) 
+  }
+}
+dividirPorDez(original) */
+
+//C.
+ /* function numerosPares(valores) {
+  let numerosPares = []
+  for (let i = 0; i < valores.length; i++) {
+    const copia = valores[i];
+    
+    if(copia % 2 === 0){
+      numerosPares.push(copia)
+      console.log(copia)
+    }
+  }
+} 
+numerosPares(original) 
+ */
+
+//D.
+/* function frase(valores) {
+  for (let i = 0; i < valores.length; i++) {
+    let comString = []
+    const element = valores[i];
+    comString.push(`O elemento do index ${i} é: ${element}`)
+    console.log(comString)
+  }
+}
+frase(original) */
+
+//E.
+let valorMaximo = 0
+let valorMinimo = 100
+function frase(valores) {
+  for (let i = 0; i < valores.length; i++) {
+    let element = valores[i];
+    if(element > valorMaximo){
+      let valorMaximo = element
+      element = valorMaximo
+      console.log(valorMaximo)
+    }
+  }
+}
+frase(original)
