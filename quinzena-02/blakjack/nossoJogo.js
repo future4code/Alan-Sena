@@ -4,6 +4,7 @@ console.log('Bem vindo ao jogo Blackjack')
 let perguntaInicioDoJogo = confirm('Quer iniciar uma rodada?')
 
 if(perguntaInicioDoJogo === true){
+   //SORTEIO CARTA USUARIO
    function sorteioUsuario() {
       //sorteio da primeira carta do usuário.
       let primeiroSorteioUsuario = comprarCarta()
@@ -24,7 +25,8 @@ if(perguntaInicioDoJogo === true){
    }
    let chamaSorteioUsuario = sorteioUsuario()
    let pontuacaoUsuario = chamaSorteioUsuario
-  
+   
+   //SORTEIO CARTA COMPUTADOR
    function sorteioComputador() {
       //sorteio da primeira carta computador.
       let primeiroSorteioComputador = comprarCarta()
