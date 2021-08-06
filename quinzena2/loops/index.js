@@ -5,7 +5,7 @@
 //2.a) O que vai ser impresso no console?
 //Resposta:19, 20, 21, 23, 25, 27, 30
 //b) Se eu quisesse acessar o índice de cada elemento dessa lista, o for...of... é suficiente? Se sim, o que poderia ser usado para fazer isso?
-//Resposta: Não, teria que usar o for comum.
+//Resposta: Não, teria que usar o indexOf().
 
 /*3. 
   *
@@ -22,13 +22,13 @@ if(bichinhos > 0){
     while((nomeBichinhos.length + 1) <= bichinhos){
     let perguntaNomes = prompt('Qual o nome deles?')
     nomeBichinhos.push(perguntaNomes)
-    console.log(nomeBichinhos)
   }
+  console.log(nomeBichinhos)
 }
-else(bichinho === 0 ){
+else if(bichinho === 0 ){
   console.log('Que pena! Você pode adotar um pet.')
-} */
-
+} 
+ */
 //2.
 let original = [10, 31, 44, 65, 78, 99]
 /* //A.
@@ -64,27 +64,37 @@ numerosPares(original)
  */
 
 //D.
-/* function frase(valores) {
-  for (let i = 0; i < valores.length; i++) {
-    let comString = []
-    const element = valores[i];
-    comString.push(`O elemento do index ${i} é: ${element}`)
-    console.log(comString)
-  }
-}
-frase(original) */
+/* let comString = []
 
-//E.
-let valorMaximo = 0
-let valorMinimo = 100
 function frase(valores) {
   for (let i = 0; i < valores.length; i++) {
-    let element = valores[i];
-    if(element > valorMaximo){
-      let valorMaximo = element
-      element = valorMaximo
-      console.log(valorMaximo)
-    }
+    const element = valores[i];
+    comString.push(`O elemento do index ${i} é: ${element}`)
   }
+  console.log(comString)
 }
 frase(original)
+ */
+//E.
+function maior(array){
+  let maiorNumero = 0
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] > maiorNumero){
+      maiorNumero = array[i]
+    }
+  }
+  return maiorNumero
+}
+let numeroMaior = maior(original)
+
+function menor(array){
+  let menorNumero = 100
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] < menorNumero){
+      menorNumero = array[i]
+    }
+  }
+  return menorNumero
+}
+let numeroMenor = menor(original)
+console.log(`O maior número é ${numeroMaior} e o menor é ${numeroMenor}`)
