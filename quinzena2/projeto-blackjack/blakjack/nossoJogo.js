@@ -47,6 +47,15 @@ if(perguntaInicioDoJogo === true){
    }
    let chamaSorteioComputador = sorteioComputador()
    let pontuacaoComputador = chamaSorteioComputador
+   
+   //Quem venceu
+   if(chamaSorteioUsuario > chamaSorteioComputador){
+      console.log('O usuário venceu!')
+   }else if(chamaSorteioComputador > chamaSorteioUsuario){
+      console.log("O computador venceu!")
+   }else{
+      console.log("Empate!")
+   }
 
 }else{
    console.log("Fim de jogo!")
