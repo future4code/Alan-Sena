@@ -5,65 +5,63 @@ let perguntaInicioDoJogo = confirm('Quer iniciar uma rodada?')
 
 if(perguntaInicioDoJogo === true){
    //SORTEIO CARTA USUARIO
+   let cartasDoUsuario = []
+   let cartasDoComputador = []
+   
    function sorteioUsuario() {
-      //sorteio da primeira carta do usuário.
-      let primeiroSorteioUsuario = comprarCarta()
-      let primeiraCartaUsuario = [(primeiroSorteioUsuario.texto),(primeiroSorteioUsuario.valor)]
       
-      //sorteio da segunda carta do usuário.
-      let segundoSorteioUsuario = comprarCarta()
-      let segundaCartaUsuario = [(segundoSorteioUsuario.texto),(segundoSorteioUsuario.valor)]
+   for (let i = 1; i < 3; i++) {
+         let primeiroSorteioUsuario = comprarCarta()
+         let primeiraCartaUsuario = primeiroSorteioUsuario.texto
+         let primeiroValorUsuario = primeiroSorteioUsuario.valor
+         cartasDoUsuario.push(primeiraCartaUsuario, primeiroValorUsuario)
+      }
       
       //Verifica se tem duas cartas 'A'
-      let verificaCartaA = ((primeiraCartaUsuario[0].includes('A')) && (segundaCartaUsuario[0].includes('A')))
+      let verificaCartaA = ((cartasDoUsuario[0].includes('A')) && (cartasDoUsuario[2].includes('A')))
       if(verificaCartaA === true){
          sorteioUsuario()
       }
       
       //soma dos valores das cartas.
-      let somaValorUsuario = Number(primeiraCartaUsuario[1] + Number(segundaCartaUsuario[1]))
+      let somaValorUsuario = Number(cartasDoUsuario[1]) + Number(cartasDoUsuario[3])
       
       //impressão do resultado do sorteio, junto a soma da pontuação das cartas.
-      console.log(`Usuário - Cartas: ${primeiraCartaUsuario[0]} ${segundaCartaUsuario[0]} - Pontuação ${somaValorUsuario}`)
+      console.log(`Usuário - Cartas: ${cartasDoUsuario[0]} ${cartasDoUsuario[2]} - Pontuação ${somaValorUsuario}`)
       
-      //peço o retorno do resultado para comparar quem venceu.
       return somaValorUsuario
    }
    let chamaSorteioUsuario = sorteioUsuario()
-   let pontuacaoUsuario = chamaSorteioUsuario
+  
    
-  //SORTEIO CARTA COMPUTADOR
+   //SORTEIO CARTA COMPUTADOR
    function sorteioComputador() {
-      //sorteio da primeira carta computador.
-      let primeiroSorteioComputador = comprarCarta()
-      let primeiraCartaComputador = [(primeiroSorteioComputador.texto), (primeiroSorteioComputador.valor)]
+      
+      for (let i = 1; i < 3; i++) {
+         let primeiroSorteioComputador = comprarCarta()
+         let cartaComputadorTexto = primeiroSorteioComputador.texto
+         let cartaComputadorValor = primeiroSorteioComputador.valor
+         cartasDoComputador.push(cartaComputadorTexto, cartaComputadorValor)
+      }
 
-      //sorteio segunda carta computador.
-      let segundoSorteioComputador = comprarCarta()
-      let segundaCartaComputador = [(segundoSorteioComputador.texto),(segundoSorteioComputador.valor)]
-
-      //Verifica se tem duas cartas 'A'
-      let verificaCartaComputador = ((primeiraCartaComputador[0].includes('A')) && (segundaCartaComputador[0].includes('A')))
+      let verificaCartaComputador = ((cartasDoComputador[0].includes('A')) && (cartasDoComputador[2].includes('A')))
       if(verificaCartaComputador === true){
          sorteioComputador()
       }
 
-      //soma dos valores das cartas sorteadas.
-      let somaValorComputador = Number(primeiraCartaComputador[1]) + Number(segundaCartaComputador[1])
+      let somaValorComputador = Number(cartasDoComputador[1]) + Number(cartasDoComputador[3])
 
-      //impressão do resultado dos sorteios, junto a soma da pontuação obtida pelo computador.
-      console.log(`Computador - Cartas: ${primeiraCartaComputador[0]} ${segundaCartaComputador[0]} - Pontuação ${somaValorComputador}`)
+      console.log(`Computador - Cartas: ${cartasDoComputador[0]} ${cartasDoComputador[2]} - Pontuação ${somaValorComputador}`)
 
-      //peço o retorno do resultado para comparar quem venceu.
       return somaValorComputador
    }
    let chamaSorteioComputador = sorteioComputador()
-   let pontuacaoComputador = chamaSorteioComputador
+    
    
    //Quem venceu
-   if(pontuacaoUsuario > pontuacaoComputador){
+   if(chamaSorteioUsuario > chamaSorteioComputador){
       console.log('O usuário venceu!')
-   }else if(pontuacaoComputador > pontuacaoUsuario){
+   }else if(chamaSorteioComputador > chamaSorteioUsuario){
       console.log("O computador venceu!")
    }else{
       console.log("Empate!")
