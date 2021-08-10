@@ -36,7 +36,7 @@ console.log(nomeDosPets)  */
 })
 console.log(petSalsicha)  */ 
 
-//c)
+//c)rie um novo array que possuirá mensagens para enviar para todos os clientes que são poodles. A mensagem deve ser: "Você ganhou um cupom de desconto de 10% para tosar o/a [NOME]!"
 
 /* let clientesPoodles = pets.filter((racas, index, array) => {
    if(racas.raca === "Poodle") 
@@ -68,35 +68,33 @@ const produtos = [
  console.log(nomeDosProdutos) */
 
  //b) Crie um novo array que contenha um objeto com o nome e o preço de cada item, aplicando 5% de desconto em todos eles
- let desconto = produtos.map((precoo, index, array) =>{
-     let porcentagem = (precoo.preco / 20)
-     let descontoObtido = (precoo.preco - porcentagem)
-      return precoo.nome + 
+/*  let desconto = produtos.map((valores) =>{
+    
+    let objetoComDesconto = {nome: valores.nome, 
+        precoDescontado: (valores.preco - (valores.preco/20)),}
+    return objetoComDesconto
  })
- console.log(desconto)
+ console.log(desconto) */
 
+ //c) Crie um novo array que contenha apenas os objetos da categoria Bebidas
+ /* let categoria = produtos.filter((categorias, index, array) =>{
+     let nomeDasCategorias = categorias.categoria === "Bebidas"
+     return nomeDasCategorias
+ })
+ console.log(categoria) */
+ 
+ //d)Crie um novo array que contenha apenas os objetos cujo nome contenha a palavra "Ypê"
+ //e) Crie um novo array onde cada item é uma frase "Compre [NOME] por [PREÇO]". Esse array deve conter frases apenas dos itens cujo nome contenha a palavra "Ypê".
+ 
+ /* let ype = produtos.filter((produto, index, array) => {
+     return produto.nome.includes('Ypê')
+ })
+ console.log(ype)
 
+ let frase = ype.map((produto,index,array) =>{
+     return `Compre ${array[index].nome} por ${array[index].preco}`
+ })
+ console.log(frase) */
 
-
-
-
-
-
-
-
-
-/* function exibir(num) {
-    console.log(`O resultado é ${num}`)
-}
-
-function soma(a, b, cb) {
-    let op = a+b
-    cb(op)
-}
-
-function multiplicacao(a, b, cb) {
-    let op = a*b
-    cb(op)
-}
-soma(2,2,exibir)
-multiplicacao(2,4,exibir) */
+ 
+//Atividade D e E estão juntas.
