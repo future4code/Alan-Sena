@@ -9,7 +9,19 @@ function inverteArray(array) {
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-  
+  let numerosPares = array.filter((numero) =>{
+    let numeroVerifica = numero
+    if(numeroVerifica % 2 === 0){
+      return numeroVerifica
+    }
+  })
+
+  let numerosElevadosA2 = numerosPares.map((numero) =>{
+    let novosNumeros = Math.pow(numero,2)
+    return novosNumeros
+  })
+
+  return numerosElevadosA2
 }
 
 // EXERCÍCIO 03
