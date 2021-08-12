@@ -9,7 +9,7 @@ function inverteArray(array) {
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-   let numerosPares = array.filter((numero) =>{
+   /* let numerosPares = array.filter((numero) =>{
     let numeroVerifica = numero
     if(numeroVerifica % 2 === 0){
       return numeroVerifica
@@ -21,48 +21,53 @@ function retornaNumerosParesElevadosADois(array) {
     return novosNumeros
   })
 
-  return numerosElevadosA2 
+  return numerosElevadosA2  */
 }
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-   let numerosPares = array.filter((numero) =>{
+  /*  let numerosPares = array.filter((numero) =>{
     let numeroVerifica = numero
     if(numeroVerifica % 2 === 0){
       return numeroVerifica
     }
   })
-  return numerosPares 
+  return numerosPares  */
 }
 
 // EXERCÍCIO 04
-let arrayQualquer = [2,6,34,76,12,23]
+
 function retornaMaiorNumero(array) {
-  let maiorNumero = 0
+  /* let maiorNumero = 0
   
   for (let i = 0; i < array.length; i++) {
       if(array[i] > maiorNumero){
       maiorNumero = array[i]
     }
   }
-  return maiorNumero
+  return maiorNumero */
 }
-retornaMaiorNumero(arrayQualquer)
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-   return array.length 
+  /*  return array.length  */
 }
 
 // EXERCÍCIO 06
 function retornaExpressoesBooleanas() {
-  
+
 }
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-
-}
+  let numeros = []
+  let numeroAtual = 0
+  for (let i = 0; i < n; i++) {
+    numeros.push(numeroAtual)
+    numeroAtual = (numeroAtual + 2)
+  }
+  return numeros
+}retornaNNumerosPares()
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
