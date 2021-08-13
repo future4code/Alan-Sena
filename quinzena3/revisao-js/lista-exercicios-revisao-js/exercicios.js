@@ -218,17 +218,29 @@ function verificaParidade(array) {
 
 // EXERCÍCIO 18A
 function retornaPessoasAutorizadas(pessoas) {
-
+  let pessoasAutorizadas = []
+  for (let i = 0; i < pessoas.length; i++) {
+    if((pessoas[i].altura >= 1.5) && ((pessoas[i].idade > 14) && (pessoas[i].idade < 60))){
+      pessoasAutorizadas.push(pessoas[i])
+    }
+  }
+  return pessoasAutorizadas
 }
 
 // EXERCÍCIO 18B
 function retornaPessoasNaoAutorizadas(pessoas) {
-
+  let naoAutorizadas = []
+  for (let i = 0; i < pessoas.length; i++) {
+    if((pessoas[i].altura < 1.5) || ((pessoas[i].idade <= 14) || (pessoas[i].idade >= 60))){
+      naoAutorizadas.push(pessoas[i])
+    }
+  }
+  return naoAutorizadas
 }
 
 // EXERCÍCIO 19A
 function ordenaPorNome(consultasNome) {
-
+  
 }
 
 // EXERCÍCIO 19B
