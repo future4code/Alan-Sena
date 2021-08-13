@@ -163,27 +163,57 @@ function anonimizaPessoa(pessoa) {
 
 // EXERCÍCIO 16A
 function maioresDe18(arrayDePessoas) {
-
+  let acimaDe18 = []
+  for (let i = 0; i < arrayDePessoas.length; i++) {
+    if(arrayDePessoas[i].idade >= 18){
+      acimaDe18.push(arrayDePessoas[i])
+    }
+  }
+  return acimaDe18
 }
 
 // EXERCÍCIO 16B
 function menoresDe18(arrayDePessoas) {
-
+  let abaixoDe18 = []
+  for (let i = 0; i < arrayDePessoas.length; i++) {
+    if(arrayDePessoas[i].idade < 18){
+      abaixoDe18.push(arrayDePessoas[i])
+    }
+  }
+  return abaixoDe18
 }
 
 // EXERCÍCIO 17A
 function multiplicaArrayPor2(array) {
-
+  let novoArray = []
+  for (let i = 0; i < array.length; i++) {
+    novoArray.push(array[i]*2)
+  }
+  return novoArray
 }
 
 // EXERCÍCIO 17B
 function multiplicaArrayPor2S(array) {
-
+  let novoArray = []
+  for (let i = 0; i < array.length; i++) {
+    let numero = array[i]*2
+    numero = numero.toString()
+    novoArray.push(numero)
+  }
+  return novoArray
 }
 
 // EXERCÍCIO 17C
 function verificaParidade(array) {
-
+  let novoArray = []
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] % 2 === 0){
+      novoArray.push(`${array[i]} é par`)
+    }else{
+      novoArray.push(`${array[i]} é ímpar`)
+    }
+  }
+  return novoArray
 }
 
 // EXERCÍCIO 18A
