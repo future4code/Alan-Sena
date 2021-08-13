@@ -1,15 +1,15 @@
 // EXERCÍCIO 01
 function inverteArray(array) {
-  /* let meuArrayInvertido = []
+  let meuArrayInvertido = []
   for (let i = array.length -1; i >= 0; i--) {
     meuArrayInvertido.push(array[i])
   }
-  return meuArrayInvertido */
+  return meuArrayInvertido
 }
 
 // EXERCÍCIO 02
 function retornaNumerosParesElevadosADois(array) {
-   /* let numerosPares = array.filter((numero) =>{
+  let numerosPares = array.filter((numero) =>{
     let numeroVerifica = numero
     if(numeroVerifica % 2 === 0){
       return numeroVerifica
@@ -21,36 +21,36 @@ function retornaNumerosParesElevadosADois(array) {
     return novosNumeros
   })
 
-  return numerosElevadosA2  */
+  return numerosElevadosA2 
 }
 
 // EXERCÍCIO 03
 function retornaNumerosPares(array) {
-  /*  let numerosPares = array.filter((numero) =>{
+  let numerosPares = array.filter((numero) =>{
     let numeroVerifica = numero
     if(numeroVerifica % 2 === 0){
       return numeroVerifica
     }
   })
-  return numerosPares  */
+  return numerosPares 
 }
 
 // EXERCÍCIO 04
 
 function retornaMaiorNumero(array) {
-  /* let maiorNumero = 0
+  let maiorNumero = 0
   
   for (let i = 0; i < array.length; i++) {
       if(array[i] > maiorNumero){
       maiorNumero = array[i]
     }
   }
-  return maiorNumero */
+  return maiorNumero
 }
 
 // EXERCÍCIO 05
 function retornaQuantidadeElementos(array) {
-  /*  return array.length  */
+    return array.length
 }
 
 // EXERCÍCIO 06
@@ -60,13 +60,13 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-  /* let numeros = []
+  let numeros = []
   let numeroAtual = 0
   for (let i = 0; i < n; i++) {
     numeros.push(numeroAtual)
     numeroAtual = (numeroAtual + 2)
   }
-  return numeros */
+  return numeros
 }
 
 // EXERCÍCIO 08
@@ -82,12 +82,34 @@ function checaTriangulo(a, b, c) {
 
 // EXERCÍCIO 09
 function comparaDoisNumeros(num1, num2) {
-  // Formato do objeto a ser retornado:
-  // {
-  //   maiorNumero: X,
-  //   maiorDivisivelPorMenor: Y,
-  //   diferenca: Z
-  // }
+  let objeto = {}
+  
+  if(num1 > num2){
+    objeto.maiorNumero = num1
+    
+    if(num1 % num2 === 0){
+      objeto.maiorDivisivelPorMenor = true
+    }else{
+      objeto.maiorDivisivelPorMenor = false
+    }
+    
+    let diferencaDosNumeros = num1 - num2
+    objeto.diferenca = diferencaDosNumeros
+    
+  }else{
+    objeto.maiorNumero = num2
+    
+    if(num2 % num1 === 0){
+      objeto.maiorDivisivelPorMenor = true
+    }else{
+      objeto.maiorDivisivelPorMenor = false
+    }
+    
+    let diferencaDosNumeros = num2-num1
+    objeto.diferenca = diferencaDosNumeros
+  }
+
+  return objeto
 }
 
 // EXERCÍCIO 10
