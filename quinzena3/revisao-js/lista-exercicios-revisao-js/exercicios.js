@@ -60,20 +60,24 @@ function retornaExpressoesBooleanas() {
 
 // EXERCÍCIO 07
 function retornaNNumerosPares(n) {
-  let numeros = []
+  /* let numeros = []
   let numeroAtual = 0
   for (let i = 0; i < n; i++) {
     numeros.push(numeroAtual)
     numeroAtual = (numeroAtual + 2)
   }
-  return numeros
-}retornaNNumerosPares()
+  return numeros */
+}
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  // return 'Escaleno'
-  // return 'Equilátero'
-  // return 'Isósceles'
+  if(a === b && a === c && c === b) {
+    return 'Equilátero'
+  }else if((a !== b && a !== c && c === b) || (b !== a && a === c && b !== c) || (c !== a && a === b && c !== b)){
+    return 'Isósceles'
+  }else if(a !== b && a !== c && c !==b){
+    return 'Escaleno'
+  }
 }
 
 // EXERCÍCIO 09
