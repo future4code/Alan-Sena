@@ -55,7 +55,8 @@ function retornaQuantidadeElementos(array) {
 
 // EXERCÍCIO 06
 function retornaExpressoesBooleanas() {
-
+  let respostas = [false, false, true, true, true]
+  return respostas
 }
 
 // EXERCÍCIO 07
@@ -114,22 +115,33 @@ function comparaDoisNumeros(num1, num2) {
 
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
-
+  
 }
-
 // EXERCÍCIO 11
 function ordenaArray(array) {
-
+  
 }
 
 // EXERCÍCIO 12
 function filmeFavorito() {
-
+  let astrodev = {
+    nome: 'O Diabo Veste Prada',
+    ano: 2006,
+    diretor: 'David Frankel',
+    atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+  }
+  return astrodev  
 }
 
 // EXERCÍCIO 13
 function imprimeChamada() {
-  // "Venha assistir ao filme NOME_DO_FILME, de ANO, dirigido por DIRECAO e estrelado por ELENCO."
+  let astrodev = {
+    nome: 'O Diabo Veste Prada',
+    ano: 2006,
+    diretor: 'David Frankel',
+    atores: ['Meryl Streep', 'Anne Hathaway', 'Emily Blunt', 'Stanley Tucci']
+  }
+  return `Venha assistir ao filme ${astrodev.nome}, de ${astrodev.ano}, dirigido por ${astrodev.diretor} e estrelado por ${astrodev.atores[0]}, ${astrodev.atores[1]}, ${astrodev.atores[2]}, ${astrodev.atores[3]}.`
 }
 
 // EXERCÍCIO 14
