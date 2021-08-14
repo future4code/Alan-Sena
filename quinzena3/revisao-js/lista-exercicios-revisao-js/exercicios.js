@@ -72,12 +72,12 @@ function retornaNNumerosPares(n) {
 
 // EXERCÍCIO 08
 function checaTriangulo(a, b, c) {
-  if(a === b && a === c && c === b) {
+  if(a === b && b === c) {
     return 'Equilátero'
-  }else if((a !== b && a !== c && c === b) || (b !== a && a === c && b !== c) || (c !== a && a === b && c !== b)){
-    return 'Isósceles'
-  }else if(a !== b && a !== c && c !==b){
+  }else if(a !== b && b !== c){
     return 'Escaleno'
+  }else{
+    return 'Isósceles'
   }
 }
 
@@ -116,10 +116,48 @@ function comparaDoisNumeros(num1, num2) {
 // EXERCÍCIO 10
 function segundoMaiorEMenor(array) {
   
+  let menor = Infinity
+  let maior = -Infinity
+  let segundoMenor = Infinity
+  let segundoMaior = -Infinity
+  let novoArray = []
+
+  for (let i of array) {
+    if (i < menor) {
+      menor = i
+    }
+    if (i > maior) {
+      maior = i
+    }
+  }
+
+  for (let i of array) {
+    if (i < segundoMenor && i !== menor) {
+      segundoMenor = i
+    }
+    if (i > segundoMaior && i !== maior) {
+      segundoMaior = i
+    }
+  }
+  novoArray.push(segundoMaior)
+  novoArray.push(segundoMenor)
+
+  return novoArray
 }
+
 // EXERCÍCIO 11
 function ordenaArray(array) {
-  
+  const len = array.length
+  for (let i = 0;i < len;i++) {
+    for (let j = 0;j < len;j++) {
+      if (array[j] > array[j + 1]) {
+        let tmp = array[j]
+        array[j] = array[j + 1]
+        array[j + 1] = tmp
+      }
+    }
+  }
+  return array
 }
 
 // EXERCÍCIO 12
@@ -149,7 +187,7 @@ function criaRetangulo(lado1, lado2) {
   let objeto ={
     largura: lado1,
     altura: lado2,
-    perimetro: 2 *(lado1 + lado2),
+    perimetro: 2 * (lado1 + lado2),
     area: lado1 * lado2
   }
   return objeto
@@ -187,7 +225,7 @@ function menoresDe18(arrayDePessoas) {
 function multiplicaArrayPor2(array) {
   let novoArray = []
   for (let i = 0; i < array.length; i++) {
-    novoArray.push(array[i]*2)
+    novoArray.push(array[i] * 2)
   }
   return novoArray
 }
