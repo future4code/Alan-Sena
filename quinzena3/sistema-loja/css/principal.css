@@ -1,0 +1,12 @@
+.principal{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: lightgray;
+    margin: 0px;
+    border-bottom: 4px solid black;
+    padding-bottom: 4px;
+}
+.texto{
+    margin-bottom: 0px;
+    padding-bottom: 4px;
+    border-bottom: 4px solid black;
+}
