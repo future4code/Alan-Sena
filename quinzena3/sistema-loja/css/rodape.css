@@ -1,0 +1,20 @@
+.rodape{
+    background-color: #FCA311;
+    color: #000;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.icones-redes img{
+    height: 20px;
+    width: 20px;
+}
+
+.contato p{
+    margin: 3px;
+    padding: 0px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+}
+h3{
+    text-transform: uppercase;
+}
