@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Adicionar Produto</title>
+    <link rel="stylesheet" href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\css\cabecalho.css">
+    <link rel="stylesheet" href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\css\rodape.css">
+    <link rel="stylesheet" href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\css\principal.css">
+</head>
+<body style="margin: 0px;">
+    <header class="cabecalho">
+        <div class="cabecalho-botao">
+            <h1>Tricton </h1>
+            <a href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\html\index.html">Página Inicial</a>
+            <a href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\\html\ctrl-estoque.html">Controle de Estoque</a>
+            <a href="C:\Users\Alan\Desktop\repositório-labenu\quinzena3\sistema-loja\html\funcionarios.html">Funcionários</a>
+        </div>
+    </header>
+    
+    <main class="principal">
+    <h2>Adicionar Produto</h2>
+    <form action="#">
+        <div>
+            <label for="link-foto">Link para foto: </label>
+            <input type="url" id="link-foto" name="link-foto">
+        </div>
+        
+        <div>
+            <label for="descricao"> Descrição do produto: </label>
+            <!-- Adicione o id apropriado para o input abaixo -->
+            <input type="text" id="descricao" name="descrição-do-produto">
+        </div>
+        
+        <div>
+            <label for="preco">Preço (em R$): </label>
+            <!-- Adicione o id apropriado e o type para receber números abaixo -->
+            <input type="number" id="preco" name="preço">
+        </div>
+        
+        <div>
+            <!-- Preencha as propriedades necessárias para os elementos abaixo -->
+            <label for="quantidade">Quantidade disponível: </label>
+            <input type="text" id="quantidade" name="quantidade-disponivel">
+        </div>
+
+        <div class="form-add">
+            <!-- Adicione ao type do botão abaixo o valor para que ele submeta o formulário -->
+            <button type="submit">Adicionar</button>
+        </div>
+
+    </form>
+    </main>
+
+    <footer class="rodape">
+        <div class="contato">
+            <h3> CONTATOS </h3>
+            <p><strong>E-mail:</strong> contato@tricton.com </p>
+            <br>
+            <p><strong>Telefone:</strong>(31) 3456-7890</p>
+        </div>
+        <div>
+            <h3> Siga-nos nas redes sociais! </h3>
+            <div class="icones-redes">
+                <a href="#"><img class="icones-redes" src="https://image.flaticon.com/icons/png/512/25/25305.png"/></a>
+                <a href="#"><img class="icones-redes" src="https://image.flaticon.com/icons/png/512/25/25425.png"/></a>
+                <a href="#"><img class="icones-redes" src="https://image.flaticon.com/icons/png/512/8/8800.png"/></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
