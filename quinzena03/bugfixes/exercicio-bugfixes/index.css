@@ -7,7 +7,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto',  sans-serif;
 }
 
 h2 {
@@ -30,7 +30,7 @@ img {
     width: 100px;
 }
 
-div>p:first-child {
+div > p:first-child {
     display: inline;
 }
 
@@ -45,6 +45,12 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .botao-amarelo:hover {
@@ -75,24 +81,55 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 10px;
+    position: relative;
 }
 
-#container-de-descricao>ol {
+h3 {
+    margin: 0;
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+#container-de-descricao > ol {
     padding: 15px 0px;
+    color: #fff;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+
 }
 
 #container-para-comprar {
     background-color: #e7eb90;
+    position: relative;
 }
 
-#container-para-comprar>p {
+#container-para-comprar > p {
     color: #c44f00;
-    padding: 100px 0;
+    padding: 50px 0;
     font-size: 60px;
+    display: block;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
 .texto-descricao{
     margin-top: 10px;
+    margin: 0;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
 }
 
 
@@ -143,6 +180,7 @@ td button:active{
 
 
 #back-button {
+    margin: 100px;
     background-color: white;
     width: 100px;
     height: 20px;
