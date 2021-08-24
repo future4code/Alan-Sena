@@ -70,6 +70,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
+    padding-top: 10px;
 }
 
 #container-de-descricao>ol {
@@ -84,6 +85,10 @@ div img {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+}
+
+.texto-descricao{
+    margin-top: 10px;
 }
 
 
