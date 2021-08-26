@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 25px;
+}
+
+/* Tudo relacionado ao CABEÇALHO */
+header {
+    flex-grow: 1;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+header img{
+    height: 15px;
+    margin: 0px 40px;
+    flex-grow: 0;
+}
+
+header h1 {
+    margin: 0px 5px;
+    flex-grow: 1;
+    font-size: 22px;
+}
+
+header button {
+    margin: 0px 5px;
+    flex-grow: 0;
+    background-color: lightgray;
+    padding: 1px 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+/* Tudo relacionado ao conteúdo principal */
+main{
+    flex-grow: 50;
+}
+
+header img {
+    margin: 0px 5px;
+    flex-grow: 0;
+}
+
+/* Tudo relacionado ao RODAPÉ */
+footer {
+    flex-grow: 1;
+    background-color: mediumvioletred;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
