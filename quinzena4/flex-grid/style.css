@@ -1,0 +1,169 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+img {
+    height: 25px;
+}
+
+/* Tudo relacionado ao CABEÇALHO */
+header {
+    flex-grow: 1;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+header img{
+    height: 15px;
+    margin: 0px 40px;
+    flex-grow: 0;
+}
+
+header h1 {
+    margin: 0px 5px;
+    flex-grow: 1;
+    font-size: 22px;
+}
+
+header button {
+    margin: 0px 5px;
+    flex-grow: 0;
+    background-color: lightgray;
+    padding: 1px 5px;
+    height: 22px;
+    width: 50px;
+}
+
+header a {
+    background-color: lightgrey;
+    text-decoration: none;
+    color: black;
+    margin: 8px;
+    border: 2px solid black;
+    height: 23px;
+    width: 50px;
+    text-align: center;
+}
+
+header p {
+    font-size: 100%;
+    padding-bottom: 2px;
+}
+
+header img {
+    margin: 0px 5px;
+    flex-grow: 0;
+}
+
+/* Tudo relacionado ao conteúdo principal */
+main{
+    flex-grow: 100;
+    display: flex;
+    align-items: stretch;
+}
+/* PRINCIPAL-MENU */
+.menu {
+    background-color: #f2d0e0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+    padding: 7px 0 0 5px;
+    justify-content: start;
+}
+
+
+
+.menu-item  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.setas {
+    flex-grow: 0;
+    width: 13px;
+    height: 13px;
+    padding: 0 5px 0 0;
+}
+
+.textos {
+    flex-grow: 2;
+    font-size: 13px;
+    padding: 0 0 0 5px;
+}
+
+main a {
+    text-decoration: none;
+    color: black;
+}
+
+.icones {
+    flex-grow: 0;
+    width: 13px;
+    height: 13px;
+}
+/* PRINCIPAL-CARDDS */
+
+.cards {
+    display: grid;
+    flex-grow: 10;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 15px;
+    column-gap: 10px;
+    padding: 16px 16px 16px 16px;
+}
+
+.cards-itens {
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 5px 5px 0 lightgrey;
+}
+
+.cards-itens > p {
+    text-align: center;
+    height: 28px;
+    font-size: 9px;
+}
+
+.cards-itens > img {
+    width: 100%;
+    padding: 0;
+}
+
+.fotos-bolos {
+    flex-grow: 8;
+    padding: 3px;
+}
+
+.titulo-cars {
+    flex-grow: 1;
+}
+
+.descricao-produto {
+    padding: 02pxpx;
+    flex-grow: 1;
+
+}
+/* Tudo relacionado ao RODAPÉ */
+footer {
+    flex-grow: 1;
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: center;
+}
+
