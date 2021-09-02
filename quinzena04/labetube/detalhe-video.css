@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+/* ========== CABEÇALHO ========== */
+.detalhe-cabecalho{
+    flex-grow: 0;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.detalhe-cabecalho > input {
+    padding: 1px 3px;
+}
+
+/* ========== CONTEUDO ========== */
+.detalhe-main {
+    flex-grow: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+}
+
+/* ========== RODAPÉ ========== */
+.detalhe-rodape {
+    flex-grow: 0;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-device-width : 300px) and (max-device-width : 600px) {
+    body {
+        height: 100vh;
+        width: 100vw;
+    }
+    .detalhe-main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    video {
+        width: 95%;
+        padding: 0 5px 0 0 ;
+    }
+
+    .detalhe-rodape {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+        width: 100vw;
+    }
+}
