@@ -17,7 +17,7 @@ header > input {
 }
 
 /* ========== MAIN ========== */
-ul {
+.conteudo {
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -26,7 +26,7 @@ ul {
     padding: 8px;
 }
 
-li > a {
+div > a {
     height: 98%;
     width: 100%;
     display: flex;
@@ -52,6 +52,41 @@ li > a {
 .imagem-card {
     width: 100%;
     height: 90%;
+}
+
+@media screen and (min-device-width : 200px) and (max-device-width : 399px){
+    .conteudo{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (min-device-width : 400px) and (max-device-width : 600px) {
+    .conteudo {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-items: center;
+    }
+
+    .cards {
+        width: 75%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .rodape {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-device-width : 600px) and (max-device-width : 800px){
+    .conteudo {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 /* ========== RODAPÉ ========== */
 .rodape {
