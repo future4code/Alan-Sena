@@ -1,0 +1,35 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+/* ========== CABEÇALHO ========== */
+.detalhe-cabecalho{
+    flex-grow: 0;
+    background-color: red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.detalhe-cabecalho > input {
+    padding: 1px 3px;
+}
+
+/* ========== CONTEUDO ========== */
+.detalhe-main {
+    flex-grow: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 88vh;
+}
+
+/* ========== RODAPÉ ========== */
+.detalhe-rodape {
+    flex-grow: 0;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
