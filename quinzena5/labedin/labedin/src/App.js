@@ -3,6 +3,8 @@ import CardGrande from './components/CardGrande/CardGrande';
 import CardPequeno from './components/CardPequeno/CardPequeno';
 import ImagemButton from './components/ImagemButton/ImagemButton';
 import eu from './img/eu.jpg';
+import email from './img/email.png'
+import endereco from './img/endereco.png'
 import styled from 'styled-components';
 
 const AppPage = styled.div`
@@ -40,10 +42,12 @@ function App() {
         />
 
         <CardPequeno 
+          imagem={email}
           texto="Email: bananinha@banu.com"
         />
 
         <CardPequeno 
+          imagem={endereco}
           texto="Endereço: Rua Antônio Silva, nº180"
         />
       </SecaoContainer>
