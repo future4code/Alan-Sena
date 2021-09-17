@@ -67,6 +67,7 @@ class Post extends React.Component {
 
   state = {
     post: [],
+
     usuario:"",
     foto:"",
     fotoUsuario:"",
@@ -87,9 +88,9 @@ class Post extends React.Component {
 
     this.setState({ post: novosPosts })
 
-    this.setState({usuario: ""})
+   /*  this.setState({usuario: ""})
     this.setState({foto: ""})
-    this.setState({fotoUsuario: ""})
+    this.setState({fotoUsuario: ""}) */
   }
 
   onClickCurtida = () => {
