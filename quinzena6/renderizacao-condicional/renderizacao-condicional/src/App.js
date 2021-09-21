@@ -25,15 +25,24 @@ class App extends React.Component {
         case 'etapa 1':
             return <Etapa1 irParaEtapa2={this.irParaEtapa2}/>
         case 'etapa 2':
-            return <Etapa2 irParaEtapa3={this.irParaEtapa3}/>
+            return <Etapa2 
+              irParaEtapa3={this.irParaEtapa3}
+              voltarParaEtapa1={this.voltarParaEtapa1}
+            />
+
         case 'etapa 3':
-            return <Etapa3 fim={this.fim}/>
+            return <Etapa3 
+              fim={this.fim}
+              voltarParaEtapa2={this.voltarParaEtapa2}
+            />
         case 'fim':
             return <Fim />
         default:
             return <h1>ERRO</h1>
     }
   }
+
+  /* ====== Métodos para próximas etapas =======*/
 
   irParaEtapa2 = () => {
     this.setState({telaAtual: 'etapa 2'})
@@ -45,7 +54,17 @@ class App extends React.Component {
   
   fim = () => {
     this.setState({telaAtual: 'fim'})
-    console.log('cheguei aqui')
+  }
+
+  /* ==== Métodos para voltar quando estiver na etapa 2 e 3. ======= */
+
+  voltarParaEtapa1 = () => {
+    this.setState({telaAtual: 'etapa 1'})
+    console.log('setei o estado')
+  }
+  
+  voltarParaEtapa2 = () => {
+    this.setState({telaAtual: 'etapa 2'})
   }
 
   render () {

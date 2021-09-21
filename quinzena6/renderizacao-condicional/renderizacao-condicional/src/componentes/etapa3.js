@@ -39,7 +39,7 @@ const Botao = styled.button`
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    margin: 4px 0 0 0;
+    margin: 4px 4px 0;
 
     &:hover{
         color: #264653;
@@ -64,7 +64,10 @@ export default class Etapa3 extends React.Component {
                         <option>Cuso de inglês</option>
                     </Selects>
 
-                    <Botao onClick={this.props.fim}><strong>Enviar</strong></Botao>
+                    <div>
+                        <Botao onClick={this.props.voltarParaEtapa2}><strong>Voltar</strong></Botao>
+                        <Botao onClick={this.props.fim}><strong>Enviar</strong></Botao>
+                    </div>
                 </Formulario>
             </Secao>
         )

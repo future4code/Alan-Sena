@@ -9,6 +9,7 @@ const Secao = styled.section`
     height: 75vh;
     width: 75vw;
     background-color: #fff;
+    border-radius: 15px;
 `
 
 const Titulo = styled.h1`
@@ -29,7 +30,7 @@ const Botao = styled.button`
     border: 2px solid black;
     border-radius: 5px;
     cursor: pointer;
-    margin: 4px 0 0 0;
+    margin: 4px 4px 0;
 
     &:hover{
         color: #264653;
@@ -55,10 +56,12 @@ export default class Etapa2 extends React.Component {
                     <label for={"institução"}>6. Qual a unidade de ensino?</label>
                     <Inputs type={"text"} name={"instituição"} id={"instituição"}></Inputs>
 
-                    <Botao onClick={this.props.irParaEtapa3}><strong>Próxima etapa</strong></Botao>
+                    <div>
+                        <Botao onClick={this.props.voltarParaEtapa1}><strong>Voltar</strong></Botao>
+                        <Botao onClick={this.props.irParaEtapa3}><strong>Próxima etapa</strong></Botao>
+                    </div>
                 </Formulario>
             </Secao>
         )
-    
     }
 }
