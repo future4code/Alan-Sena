@@ -27,13 +27,26 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.tarefas !== this.state.tarefas) {
-      localStorage.setItem('tarefas', this.state.tarefas);
-      console.log("Mudou tarefa");
+      localStorage.setItem('tarefas', JSON.stringify(this.state.tarefas))
+      localStorage.setItem('input', JSON.stringify(this.state.inputValue))
+      localStorage.setItem('filtro', JSON.stringify(this.state.filtro))
     }
   };
 
   componentDidMount() {
+    const tarefasLS = localStorage.getItem("tarefas")
+    const inputValueLS = localStorage.getItem("input")
+    const filtroLS = localStorage.getItem("filtro")
+    
+    const qualquer = JSON.parse(tarefasLS)
+    const qualquer2 = JSON.parse(inputValueLS)
+    const qualquer3 = JSON.parse(filtroLS)
 
+    this.setState({
+      tarefas: qualquer,
+      inputValue: qualquer2,
+      filtro: qualquer3
+    });
   };
 
   onChangeInput = (e) => {
