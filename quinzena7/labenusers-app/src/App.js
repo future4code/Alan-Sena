@@ -5,14 +5,13 @@ import axios from 'axios'
 
 class App extends React.Component {
   state = {
-    listaDeUsuarios: [],
     inputNome:'',
     inputEmail:'',
     telaInicial: true
   }
 
   telaInicial = () => {
-    if(this.state.telaInicial === true){
+    if(this.state.telaInicial){
       return <CriarUsuario 
         trocaTela={this.trocaTela}
         add={this.adicionarUsuario}
@@ -46,21 +45,23 @@ class App extends React.Component {
 
   adicionarUsuario = (e) =>{
     e.preventDefault()
+
+    const urlPost = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
     const body = {
       name: this.state.inputNome,
       email: this.state.inputEmail
     }
 
-    axios.post("https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users", body, {
+    axios.post(urlPost, body, {
       headers: {
-        Authorization: 'alan-sena-banu'
+        Authorization: "alan-sena-banu"
       }
-    }).then((response) => {
+    }).then((res) => {
       alert("Usuário criado com sucesso!")
       this.setState({inputNome:''})
       this.setState({inputEmail:''})
     }).catch((error) => {
-      console.log(error)
+      alert(error)
     })
   }
 
