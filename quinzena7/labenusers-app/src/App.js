@@ -43,26 +43,28 @@ class App extends React.Component {
     this.setState({inputEmail: e.target.value})
   }
 
-  adicionarUsuario = (e) =>{
-    e.preventDefault()
-
+  adicionarUsuario = async (e) =>{
+    
     const urlPost = "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users"
     const body = {
       name: this.state.inputNome,
       email: this.state.inputEmail
     }
 
-    axios.post(urlPost, body, {
-      headers: {
-        Authorization: "alan-sena-banu"
-      }
-    }).then((res) => {
+    try {
+      const postUsers = await axios.post(urlPost, body, {
+        headers: {
+          Authorization: "alan-sena-banu"
+        }
+      })
+
       alert("Usuário criado com sucesso!")
-      this.setState({inputNome:''})
-      this.setState({inputEmail:''})
-    }).catch((error) => {
-      alert(error)
-    })
+        this.setState({inputNome:''})
+        this.setState({inputEmail:''})
+
+    } catch (err) {
+      alert(err)
+    }
   }
 
   
