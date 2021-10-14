@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components"
+
 import AddPlaylist from "./componentes/addPlaylist";
 import ListaPlaylist from "./componentes/listaPlaylist";
 
@@ -11,6 +12,7 @@ const Geral = styled.div`
   flex-direction: column;
   align-items: center;
 `
+
 const Cabecalho = styled.header`
   display: flex;
   flex-direction: column;
@@ -33,23 +35,40 @@ const Main = styled.main`
 
 class App extends React.Component {
   state = {
-    inicio: false
+    inicio: 'addPlaylist'
   }
 
   telaInicial = () => {
-    if(this.state.inicio) {
-      return <AddPlaylist />
+    switch (this.state.inicio) {
+      case 'addPlaylist':
+        return <AddPlaylist />
+      
+      case 'listPlaylist':
+        return <ListaPlaylist />
+    
+      default:
+        return <ListaPlaylist />
+    }
+  }
+
+  mudaBotao = () => {
+    if(this.state.inicio === 'addPlaylist') {
+      return (
+        <button onClick={this.renderPlaylist}>Ver minhas Playlists</button>
+      )
     } else {
-      return <ListaPlaylist />
+      return (
+        <button onClick={this.renderAddPlaylist}>Adcionar Playlist</button>
+      )
     }
   }
 
   renderAddPlaylist = () => {
-    this.setState({inicio: true})
+    this.setState({inicio: 'addPlaylist'})
   }
   
   renderPlaylist = () => {
-    this.setState({inicio: false})
+    this.setState({inicio: 'listPlaylist'})
   }
 
   render () {
@@ -57,10 +76,7 @@ class App extends React.Component {
       <Geral>
         <Cabecalho>
           <h1>LABEFY</h1>
-          <nav>
-            <button onClick={this.renderAddPlaylist}>Adcionar Playlist</button>
-            <button onClick={this.renderPlaylist}>Ver minhas Playlists</button>
-          </nav>
+          {this.mudaBotao()}
         </Cabecalho>
 
         <Main>
