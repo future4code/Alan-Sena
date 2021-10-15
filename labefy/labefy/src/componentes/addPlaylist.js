@@ -5,6 +5,34 @@ import axios from "axios"
 const Div = styled.div`
     display: flex;
     flex-direction: column;
+    align-items: center;
+    width: 100%;
+    `
+
+const Button = styled.button`
+    margin: 4px;
+    border: 2px solid #fff;
+    padding: 4px;
+    cursor: pointer;
+    &:hover{
+        border: 2px solid #14740b;
+        color: #14740b;
+        transition: 0.2s;
+    }
+`
+
+const Input = styled.input`
+    border: 2px solid #fff;
+    padding: 4px;
+    
+    &:focus{
+        border: 2px solid #14740b;
+        outline: none;
+    }
+    &:hover{
+        border: 2px solid #14740b;
+        color: #14740b;
+    }
 `
 
 export default class AddPlaylist extends React.Component {
@@ -23,10 +51,12 @@ export default class AddPlaylist extends React.Component {
             headers: {
                 Authorization: 'alan-sena-banu'
             }
-        }).then((res) => {
+        })
+        .then((res) => {
             alert('Playlist criada com sucesso.')
             this.setState({inputPlaylist: ''})
-        }).catch((err) => {
+        })
+        .catch((err) => {
             console.log(err)
         })
     }
@@ -37,16 +67,14 @@ export default class AddPlaylist extends React.Component {
 
     render () {
         return (
-            <div>
                 <Div>
                     <label>Adicionar Playlist</label>
-                    <input
+                    <Input
                         onChange={this.onChangePlaylist}
                         value={this.state.inputPlaylist}
-                    ></input>
-                    <button onClick={this.addPlaylist}> Adicionar </button>
+                    ></Input>
+                    <Button onClick={this.addPlaylist}> Adicionar </Button>
                 </Div>
-            </div>
         )
     }
 }

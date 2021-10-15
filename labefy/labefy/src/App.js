@@ -5,8 +5,6 @@ import AddPlaylist from "./componentes/addPlaylist";
 import ListaPlaylist from "./componentes/listaPlaylist";
 
 const Geral = styled.div`
-  background-color: lightgray;
-  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -17,19 +15,28 @@ const Cabecalho = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
-  border: 2px solid black;
+  padding: 10px;
   width: 75vw;
   height: 10vh;
 `
 
 const Main = styled.main`
   display: flex;
-  justify-content: center;
   padding: 20px;
-  border: 2px solid black;
   height: 75vh;
   width: 75vw;
+`
+
+const Button = styled.button`
+    margin: 4px;
+    border: 2px solid #fff;
+    padding: 4px;
+    cursor: pointer;
+    &:hover{
+      border: 2px solid #14740b;
+      color: #14740b;
+      transition: 0.2s;
+    }
 `
 
 
@@ -54,11 +61,11 @@ class App extends React.Component {
   mudaBotao = () => {
     if(this.state.inicio === 'addPlaylist') {
       return (
-        <button onClick={this.renderPlaylist}>Ver minhas Playlists</button>
+        <Button onClick={this.renderPlaylist}>Ver minhas Playlists</Button>
       )
     } else {
       return (
-        <button onClick={this.renderAddPlaylist}>Adcionar Playlist</button>
+        <Button onClick={this.renderAddPlaylist}>Adcionar Playlist</Button>
       )
     }
   }
