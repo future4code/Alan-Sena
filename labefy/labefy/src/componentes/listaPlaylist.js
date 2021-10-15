@@ -178,7 +178,7 @@ export default class ListaPlaylist extends React.Component {
                 Authorization: 'alan-sena-banu'
             }
         })
-        .then((res) => this.getTracksPlaylist())
+        .then((res) => {this.getTracksPlaylist()})
         .catch((err) => console.log(err.response))
     }
 
@@ -207,14 +207,14 @@ export default class ListaPlaylist extends React.Component {
                     <h3>Música: {value.name}</h3>
                     <h4>Artista: {value.artist}</h4>
                     <AiOutlineCloseSquare 
-                        onClick={() => this.deleteTrack(v.id)}
+                        onClick={() => this.deleteTrack(value.id)}
                         size="1.5rem"
                         cursor={"pointer"}
                     />
                 </MusicName>
                 
                 <ReactPlayer 
-                    url={v.url}
+                    url={value.url}
                     width="90%"
                     height= "50px"
                     playing={false}
