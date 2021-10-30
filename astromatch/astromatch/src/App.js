@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import ListOfMatchs from './components/matches/Matchoflist';
 import Crush from './components/pretendentes/Crush';
 import styled from 'styled-components';
+import { GiOppositeHearts } from "react-icons/gi";
+import { BsPersonLinesFill } from 'react-icons/bs'
 
 const Geral = styled.section`
-  border: 1px solid black;
-  width: 40vw;
-  height: 75vh;
+  font-family: 'Ubuntu', sans-serif;
+  width: 25vw;
+  max-height: 70vh;
+  min-height: 70vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -76,9 +79,9 @@ function App() {
   return (
     <Geral>
       <Hearder>
-        <button onClick={() => mudaTela('decisao')}>Pretendentes</button>
+        <BsPersonLinesFill onClick={() => mudaTela('decisao')} cursor={'pointer'} fontSize={'1.5rem'}/>
         <h1>AstroMatch</h1>
-        <button onClick={() => mudaTela('lista')}>Ver lista</button>
+        <GiOppositeHearts onClick={() => mudaTela('lista')} cursor={'pointer'} fontSize={'1.5rem'}/>
       </Hearder>
       {tela()}
     </Geral>

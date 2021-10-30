@@ -1,5 +1,31 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+import { AiOutlineClear } from 'react-icons/ai'
+import styled from 'styled-components';
+
+const Lista = styled.div`
+    width: 100%;
+    max-height: 70vh;
+    min-height: 70vh;
+    border: 1px solid black;
+    overflow-y: scroll;
+`
+
+const PerfilCard = styled.div`
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    min-width: 90%;
+    margin: 4px 0;
+    padding: 4px;
+`
+
+const Imagem = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin: 0 8px 0 0;
+`
 
 function ListOfMatchs() {
 
@@ -31,15 +57,20 @@ function ListOfMatchs() {
     }
 
     return (
-        <div>
+        <Lista>
             <h1>Lista de Crush's</h1>
 
             {lista.map((perfil, i) => {
-                return <li key={i}>{perfil.name}</li>
+                return (
+                <PerfilCard>
+                    <Imagem src={perfil.photo} alt={'Match'}/> 
+                    <p key={i}>{perfil.name}</p>
+                </PerfilCard>
+                )
             })}
 
-            <button onClick={reset}> Limpar lista </button>
-        </div>
+            <AiOutlineClear onClick={reset} cursor={"pointer"} fontSize={'2rem'}/>
+        </Lista>
     );
 }
 

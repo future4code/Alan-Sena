@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import { ImHeart } from 'react-icons/im'
+import { IoCloseSharp } from 'react-icons/io5'
 
 const Main = styled.main`
   min-width: 100%;
@@ -7,19 +9,34 @@ const Main = styled.main`
   border: 1px solid black;
   display: flex;
   flex-direction: column;
- `
+  justify-content: space-between;
+`
 
 const Caracteristicas = styled.div`
-  padding: 4px;
-  border: 1px solid black;
-  height: 90%;
+  height: 80%;
 `
 
 const Buttons = styled.div`
-  height: 10%;
+  border-top: 1px solid black;
+  height: 20%;
   display: flex;
   justify-content: space-evenly;
   align-items: center ;
+`
+
+const Imagem = styled.img`
+  width: 100%;
+  max-height: 320px;
+`
+
+const Name = styled.h2`
+  margin: 4px;
+`
+
+const Description = styled.p`
+  margin: 8px 0 0 4px;
+  padding: 0 0 4px 0;
+  color: #343a40;
 `
 
 function Crush(props) {
@@ -30,8 +47,9 @@ function Crush(props) {
         } else {
           return (
             <Caracteristicas>
-              <h2>{perfis.name}</h2>
-              <p>{perfis.bio}</p>
+              <Imagem src={perfis.photo} alt={'foto de perfil'}/>
+              <Name>{perfis.name}</Name>
+              <Description>{perfis.bio}</Description>
             </Caracteristicas>
           )
         }
@@ -40,8 +58,8 @@ function Crush(props) {
     <Main>
         {caracteristicas()}
         <Buttons>
-            <button onClick={() => props.deuMatch(true, props.perfis)}>sim</button>
-            <button onClick={() => props.deuMatch(false, props.perfis)}>nao</button>
+            <ImHeart onClick={() => props.deuMatch(true, props.perfis)} cursor={'pointer'} fontSize={'1.5rem'} color={'red'}/>
+            <IoCloseSharp onClick={() => props.deuMatch(false, props.perfis)} cursor={'pointer'} fontSize={'1.9rem'}/>
         </Buttons>
     </Main>
     )
