@@ -4,6 +4,9 @@ import { AiOutlineClear } from 'react-icons/ai'
 import styled from 'styled-components';
 
 const Lista = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-height: 70vh;
     min-height: 70vh;
@@ -15,7 +18,7 @@ const PerfilCard = styled.div`
     border: 1px solid black;
     display: flex;
     align-items: center;
-    min-width: 90%;
+    width: 80%;
     margin: 4px 0;
     padding: 4px;
 `

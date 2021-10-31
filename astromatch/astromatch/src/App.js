@@ -7,6 +7,7 @@ import { GiOppositeHearts } from "react-icons/gi";
 import { BsPersonLinesFill } from 'react-icons/bs'
 
 const Geral = styled.section`
+  box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
   width: 25vw;
   max-height: 70vh;
