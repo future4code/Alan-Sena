@@ -1,6 +1,13 @@
+import { Link } from 'react-router-dom';
+import Button from '@mui/material/Button';
+import { Reset } from './style'
+
 function TripsDetails() {
     return (
-        <h1>Details Page</h1>
+        <>
+            <Button variant="contained" color='secondary'> <Link to='/admin/trips/list' style={Reset}> VOLTAR </Link> </Button>
+            <h1>Details Page</h1>
+        </>
     );
 }
 

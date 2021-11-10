@@ -1,10 +1,14 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { Reset } from './style';
+import Button from '@mui/material/Button';
 
-function HomePage() {
+function HomePage(props) {
+
     return (
         <div>
-            <Link to='/publica'>Área Pública</Link>
-            <Link to='/privada'>Área Privada</Link>
+            <h1> Home </h1>
+            <Button variant="contained" color='secondary'> <Link to='/trips/list' style={Reset}> Ver lista de viagens </Link> </Button>
+            <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> Área Privada </Link> </Button>
         </div>
     )
 }

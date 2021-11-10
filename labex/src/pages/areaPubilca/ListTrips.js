@@ -1,20 +1,45 @@
-import { useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import Button from '@mui/material/Button';
+import { Link } from 'react-router-dom';
+import { Reset } from './style'
+// import { getTrips } from '../../settings/request';
 
 function ListTrips() {
-    const navigate = useNavigate()
 
-    const home = () => {
-        navigate('/')
+    const [trips, setTrips] = useState('')
+
+    useEffect(() => {
+        getTrips()
+    }, [])
+
+    const getTrips = () => {
+        const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan/trips'
+    
+        axios.get(url)
+        .then((res) => setTrips(res.data.trips))
+        .catch((err) => console.log(err))
     }
 
-    const voltar = () => {
-        console.log('voltei')
+    const render = () => {
+        if(trips) {
+            const tripsList = trips.map((v, i) => {
+                return <h2 key={i}>{v.planet}</h2>
+            })
+
+            return tripsList
+        } else {
+            return <p>...carregando</p>
+        }
     }
+
     return (
         <div>
-            <button onClick={home}>Home</button>
-            <button onClick={voltar}>Voltar</button>
-            <h1>Area Publica</h1>
+            <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> ENTRAR </Link> </Button>
+            <Button variant="contained" color='secondary'> <Link to='/' style={Reset}> VOLTAR </Link> </Button>
+            <h1>Lista de viagens</h1>
+            {render()}
         </div>
     );
 }
