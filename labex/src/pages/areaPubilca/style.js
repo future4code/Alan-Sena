@@ -18,3 +18,17 @@ export const ComponenteGeralLogin = styled.section`
     flex-direction: column;
     align-items: center;
 `
+
+export const CardTrip = styled.div`
+    margin: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 4px;
+    width: 50%;
+`
+
+export const GeralListTrips = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`

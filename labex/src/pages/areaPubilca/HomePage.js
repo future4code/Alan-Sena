@@ -1,14 +1,19 @@
-import { Link } from 'react-router-dom';
-import { Reset } from './style';
+import { useNavigate } from 'react-router';
 import Button from '@mui/material/Button';
 
-function HomePage(props) {
+function HomePage() {
+    const navigate = useNavigate()
+
+    const change = (rota) => {
+        navigate(rota)
+    }
 
     return (
         <div>
             <h1> Home </h1>
-            <Button variant="contained" color='secondary'> <Link to='/trips/list' style={Reset}> Ver lista de viagens </Link> </Button>
-            <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> Área Privada </Link> </Button>
+
+            <Button variant="contained" color='secondary' onClick={() => change('/trips/list')}> Lista de Viagens  </Button>
+            <Button variant="contained" color='secondary' onClick={() => change('/login')}> Área Privada  </Button>
         </div>
     )
 }
