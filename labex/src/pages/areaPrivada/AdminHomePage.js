@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { getTrips } from '../../services/services';
-
-import { Link } from 'react-router-dom';
-import Button from '@mui/material/Button';
-import { Reset } from './style'
-import {CardTrip} from '../areaPubilca/style'
+import { useNavigate } from 'react-router';
 import { useProtectPage } from '../../hooks';
+
+import { getTrips } from '../../services';
+
+import Button from '@mui/material/Button';
+import { CardTrip } from './style'
 
 function AdminHome() {
     useProtectPage()
-
+    
     const [trips, setTrips] = useState('')
+    
+    let navigate = useNavigate()
 
     useEffect(() => {
         const fetch = async () => {
@@ -19,6 +21,15 @@ function AdminHome() {
         }
         fetch()
     }, [])
+
+
+    const changePage = (e) => {
+        navigate(e)
+    }
+
+    const deleteTrip = (e) => {
+        
+    }
 
     const render = () => {
         if(trips) {
@@ -29,7 +40,8 @@ function AdminHome() {
                         <p>Destino: {v.planet}</p>
                         <p>Descrição: {v.description}</p>
                         <p>Duração: {v.durationInDays}</p>
-                        <Button variant="contained" color='secondary'> <Link to='/admin/trips/details' style={Reset}> Detalhes </Link> </Button>
+                        <Button variant="contained" color='primary' onClick={() => {changePage('/admin/trips/details')}}> Detalhes </Button>
+                        <Button variant="contained" color='primary' onClick={() => {deleteTrip(v)}}> Apagar </Button>
                     </CardTrip>
                 )
             })
@@ -43,9 +55,9 @@ function AdminHome() {
         <div>
             
             <h1>Home Adm</h1>
-            <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> LOGOUT </Link> </Button>
-            <Button variant="contained" color='secondary'> <Link to='/admin/trips/create' style={Reset}> CRIAR VIAGEM </Link> </Button>
-            <Button variant="contained" color='secondary'> <Link to='/admin/trips/details' style={Reset}> DETALHES DA VIAGEM  </Link> </Button>
+            <Button variant="contained" color='primary' onClick={() => {changePage('/login')}}> LOGOUT </Button>
+            <Button variant="contained" color='primary'onClick={() => {changePage('/admin/trips/create')}}>  CRIAR VIAGEM </Button>
+            <Button variant="contained" color='primary'onClick={() => {changePage('/admin/trips/details')}}>  DETALHES DA VIAGEM </Button>
             {render()}
 
         </div>

@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { getTrips } from '../../services/services';
-// import axios from 'axios';
+import { getTrips } from '../../services';
+import { useNavigate } from 'react-router';
 
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom';
-import { Reset, CardTrip, GeralListTrips } from './style'
+import { CardTrip, GeralListTrips } from './style'
 
 
 function ListTrips() {
 
     const [trips, setTrips] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         const fetch = async () => {
@@ -18,6 +18,10 @@ function ListTrips() {
         }
         fetch()
     }, [])
+
+    const changePage = (e) => {
+        navigate(e)
+    }
 
     const render = () => {
         if(trips) {
@@ -28,7 +32,6 @@ function ListTrips() {
                         <p>Destino: {v.planet}</p>
                         <p>Descrição: {v.description}</p>
                         <p>Duração: {v.durationInDays}</p>
-                        <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> CANDIDATAR </Link> </Button>
                     </CardTrip>
                 )
             })
@@ -40,8 +43,8 @@ function ListTrips() {
 
     return (
         <GeralListTrips>
-            <Button variant="contained" color='secondary'> <Link to='/login' style={Reset}> ENTRAR </Link> </Button>
-            <Button variant="contained" color='secondary'> <Link to='/' style={Reset}> VOLTAR </Link> </Button>
+            <Button variant="contained" color='secondary' onClick={() => {changePage('/')}}> VOLTAR </Button>
+            <Button variant="contained" color='secondary' onClick={() => {changePage('/trips/application')}}> Candidatar </Button>
             <h1>Lista de viagens</h1>
             {render()}
         </GeralListTrips>

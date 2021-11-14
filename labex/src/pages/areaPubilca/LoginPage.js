@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router';
-import { login } from '../../services/services';
+import { login } from '../../services';
 
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import { Reset, ComponenteGeralLogin } from './style';
 
 function LoginPage() {
@@ -20,7 +21,8 @@ function LoginPage() {
         setPassword(e.target.value);
     }
 
-    const onClickLogin = async () => {
+    const onClickLogin = async (e) => {
+        e.preventDefault()
         const response = await login({ email, password });
         if(response.token) {
             localStorage.setItem("token", response.token);
@@ -29,16 +31,30 @@ function LoginPage() {
             alert(response.error.data.message);
         }
     }
+    
     return (
         <ComponenteGeralLogin>
             <Button variant="contained" color='secondary'> <Link to='/' style={Reset}> Voltar </Link> </Button>
             <h1>Login</h1>
-
-            <p>E-mail</p>
-            <input value={email} onChange={onChangeEmail}/>
-            <p>Senha</p>
-            <input value={password} onChange={onChangePassword}/>
-            <button onClick={onClickLogin}>Login</button>
+            <form>
+                <TextField
+                    required
+                    id="outlined-required"
+                    label="E-mail"
+                    value={email}
+                    onChange={onChangeEmail}
+                />
+                <TextField
+                    required
+                    id="outlined-required"
+                    label="Senha"
+                    type="password"
+                    value={password}
+                    onChange={onChangePassword}
+                />
+                <Button variant="contained" color='secondary' onClick={onClickLogin}> Voltar </Button>
+            </form>
+            
         </ComponenteGeralLogin>
     );
 }

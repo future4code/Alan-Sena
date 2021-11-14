@@ -7,7 +7,7 @@ function TripsDetails() {
     useProtectPage()
     return (
         <>
-            <Button variant="contained" color='secondary'> <Link to='/admin/trips/create' style={Reset}> VOLTAR </Link> </Button>
+            <Button variant="contained" color='secondary'> <Link to='/admin/trips/list' style={Reset}> VOLTAR </Link> </Button>
             <h1>Details Page</h1>
         </>
     );

@@ -9,12 +9,13 @@ function CreateTripPage() {
 
     const navigate = useNavigate()
 
-    const muda = () => {
+    const changePage = () => {
         navigate('/admin/trips/list')
     }
+
     return (
         <>
-            <Button variant="contained" color='secondary' onClick={muda}> VOLTAR  </Button>
+            <Button variant="contained" color='secondary' onClick={changePage}> VOLTAR  </Button>
             <h1>Criar Trip</h1>            
         </>
     );

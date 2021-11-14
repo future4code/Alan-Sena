@@ -13,7 +13,7 @@ function HomePage() {
             <h1> Home </h1>
 
             <Button variant="contained" color='secondary' onClick={() => change('/trips/list')}> Lista de Viagens  </Button>
-            <Button variant="contained" color='secondary' onClick={() => change('/login')}> Área Privada  </Button>
+            <Button variant="contained" color='secondary' onClick={() => change('/admin/trips/list')}> Área Privada  </Button>
         </div>
     )
 }
