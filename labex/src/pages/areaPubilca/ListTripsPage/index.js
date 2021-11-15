@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { getTrips } from '../../services';
+import { getTrips } from '../../../services';
 import { useNavigate } from 'react-router';
 
 import Button from '@mui/material/Button';
-import { CardTrip, GeralListTrips } from './style'
+import { CardTrip, GeralListTrips } from '../style'
 
 
 function ListTrips() {

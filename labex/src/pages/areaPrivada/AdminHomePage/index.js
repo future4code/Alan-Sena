@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
-import { useProtectPage } from '../../hooks';
+import { useProtectPage } from '../../../hooks';
 
-import { getTrips } from '../../services';
+import { getTrips } from '../../../services';
 
 import Button from '@mui/material/Button';
-import { CardTrip } from './style'
+import { CardTrip } from '../style'
 
 function AdminHome() {
     useProtectPage()
@@ -38,9 +38,7 @@ function AdminHome() {
                     <CardTrip key={i}>
                         <h2>{v.name}</h2>
                         <p>Destino: {v.planet}</p>
-                        <p>Descrição: {v.description}</p>
-                        <p>Duração: {v.durationInDays}</p>
-                        <Button variant="contained" color='primary' onClick={() => {changePage('/admin/trips/details')}}> Detalhes </Button>
+                        <Button variant="contained" color='primary' onClick={() => {changePage(`/admin/trips/details/${v.id}`)}}> Detalhes </Button>
                         <Button variant="contained" color='primary' onClick={() => {deleteTrip(v)}}> Apagar </Button>
                     </CardTrip>
                 )
@@ -57,7 +55,6 @@ function AdminHome() {
             <h1>Home Adm</h1>
             <Button variant="contained" color='primary' onClick={() => {changePage('/login')}}> LOGOUT </Button>
             <Button variant="contained" color='primary'onClick={() => {changePage('/admin/trips/create')}}>  CRIAR VIAGEM </Button>
-            <Button variant="contained" color='primary'onClick={() => {changePage('/admin/trips/details')}}>  DETALHES DA VIAGEM </Button>
             {render()}
 
         </div>
