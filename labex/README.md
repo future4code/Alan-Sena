@@ -1,5 +1,3 @@
-Imports 
-- styled components
-- axios
-- router
-- MUI
+**LabeX**
+
+Um lugar onde você encontra sua viagem dos sonhos.
