@@ -1,12 +1,15 @@
 import Router from "./router";
 import { theme } from "./theme";
 import { ThemeProvider } from "@material-ui/core/styles";
+import GlobalState from "./global/GlobalState";
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Router />
-    </ThemeProvider>
+    <GlobalState>
+      <ThemeProvider theme={theme}>
+        <Router />
+      </ThemeProvider>
+    </GlobalState>
   );
 }
 
