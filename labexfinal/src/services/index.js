@@ -1,13 +1,35 @@
-import axios from "axios"
+import axios from "axios";
 
-export const getTrips = async () => {
-  let response
-  let erro
+export const GetTrips = async (setters) => {
+  
   try {
-    response = await axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips`)
-    console.log(response)
+    const response = await axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips`)
+    console.log(response.data.trips)
+    setters.setTrips(response.data.trips)
   } catch (error) {
-    erro = error
-    console.log(erro)
+    console.log(error)
+  }
+}
+
+export const login = async ({ email, password }) => {
+
+  let error
+  let response
+  console.log(email, password)
+  
+  try {
+    response = await axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/login', 
+    { 
+      email, 
+      password 
+    })
+  } catch (e) {
+    alert(e.response.data.message)
+    error = e.response
+  }
+
+  return { 
+    token: response && response.data.token,
+    error
   }
 }

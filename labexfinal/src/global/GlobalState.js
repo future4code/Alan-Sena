@@ -3,14 +3,14 @@ import GlobalStateContext from "./GlobalStateContext";
 
 const GlobalState = (props) => {
 
-  const [value, setValue] = useState('Olá')
+  const [ trips, setTrips ] = useState()
 
-  const states = { value }
-  const setters = { setValue }
+  const states = { trips }
+  const setters = { setTrips }
 
   return (
     <GlobalStateContext.Provider value={{ states, setters }} >
-        {props.children}
+      {props.children}
     </GlobalStateContext.Provider>
   )
 }

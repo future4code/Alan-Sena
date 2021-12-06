@@ -1,7 +1,12 @@
+import HeaderLogin from "./components/HeaderLogin";
+import MainLogin from "./components/MainLogin";
+
 const LoginPage = () => {
+
   return (
     <>
-      Login
+      <HeaderLogin />
+      <MainLogin />
     </>
   )
 }

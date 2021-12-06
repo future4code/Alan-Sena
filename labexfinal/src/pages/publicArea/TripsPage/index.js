@@ -1,14 +1,20 @@
-import { useEffect } from "react";
-import { getTrips } from "../../../services";
+import { useContext, useEffect } from "react";
+import GlobalStateContext from "../../../global/GlobalStateContext";
+import { GetTrips } from "../../../services";
+import HeaderTrips from "./components/HeaderTrips";
+import MainTrips from "./components/MainTrips";
 
 const TripsPage = () => {
+  const { states, setters } = useContext(GlobalStateContext)
+
   useEffect(() => {
-    getTrips()
-  },[])
+    GetTrips(setters)
+  }, [])
   
   return (
     <>
-      trips
+      <HeaderTrips />
+      <MainTrips states={states}/>
     </>
   )
 }
