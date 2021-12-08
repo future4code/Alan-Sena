@@ -1,4 +1,5 @@
 import { useContext, useEffect } from "react";
+
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTrips } from "../../../services";
 import HeaderTrips from "./components/HeaderTrips";
@@ -9,6 +10,7 @@ const TripsPage = () => {
 
   useEffect(() => {
     GetTrips(setters)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
   return (

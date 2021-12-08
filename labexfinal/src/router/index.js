@@ -15,12 +15,12 @@ const Router = () => {
       <Routes>
         <Route exact path="/" element={<HomePage />}/>
         <Route exact path="/trips" element={<TripsPage />}/>
-        <Route exact path="/trips/application" element={<ApplicatioFormPage />}/>
-
+        <Route exact path="/trips/application/:id" element={<ApplicatioFormPage />}/>
         <Route exact path="/login" element={<LoginPage />}/>
+
         <Route exact path="/adm/home" element={<AdmHomePage />}/>
         <Route exact path="/adm/create-trip" element={<CreateTripPage />}/>
-        <Route exact path="/adm/trip-detail" element={<TripDetailsPage />}/>
+        <Route exact path="/adm/trip-detail/:id" element={<TripDetailsPage />}/>
       </Routes>
     </BrowserRouter>
   )

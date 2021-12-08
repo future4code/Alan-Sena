@@ -4,9 +4,10 @@ import GlobalStateContext from "./GlobalStateContext";
 const GlobalState = (props) => {
 
   const [ trips, setTrips ] = useState()
+  const [ trip, setTrip ] = useState()
 
-  const states = { trips }
-  const setters = { setTrips }
+  const states = { trips, trip }
+  const setters = { setTrips, setTrip }
 
   return (
     <GlobalStateContext.Provider value={{ states, setters }} >

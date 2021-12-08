@@ -33,3 +33,18 @@ export const login = async ({ email, password }) => {
     error
   }
 }
+
+export const GetTripDetail = async (setters, id) => {
+  try {
+    const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trip/${id}`
+
+    const response = await axios.get(url, {
+      headers: {
+      auth: window.localStorage.getItem('token')
+    }})
+
+    setters.setTrip(response.data.trip)
+  } catch (error) {
+    console.log(error)
+  }
+}

@@ -1,16 +1,9 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createGlobalStyle } from "styled-components";
 
-export const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#ff4400',
-    },
-    secondary: {
-      light: '#0066ff',
-      main: '#0044aa',
-      contrastText: '#fff',
-    },
-    contrastThreshold: 3,
-    tonalOffset: 0.2,
-  },
-});
+const Reset = createGlobalStyle`
+  * {
+    margin: 0;
+    font-family: 'PT Sans', sans-serif;
+  }
+`
+export default Reset;

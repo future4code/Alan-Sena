@@ -1,14 +1,17 @@
+import HeaderApplication from "./components/HeaderApplication";
+import MainApplication from "./components/MainApplication";
+
+import { useParams } from 'react-router'
+
+
 const ApplicationFormPage = () => {
+
+  const param = useParams()
+
   return (
     <>
-      <h1> Camdidatar-se </h1>
-      <fieldset>
-        <legend> Candidatar </legend>
-        <label> Nome </label>
-        <input placeholder={'Nome'}></input>
-        <label> Texto de candidatura </label>
-        <input placeholder={'Texto'}></input>
-      </fieldset>
+      <HeaderApplication />
+      <MainApplication />
     </>
   )
 }

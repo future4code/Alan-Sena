@@ -2,6 +2,8 @@ import { useNavigate } from "react-router";
 import { useForm } from "../../../../hooks/useForm";
 import { login } from "../../../../services";
 
+import Input from '../../../../components/Input'
+
 const MainLogin = () => {
   const navigate = useNavigate()
 
@@ -24,14 +26,13 @@ const MainLogin = () => {
       <form onSubmit={submit}>
         <fieldset>
           <legend> Dados do usuário </legend>
-
-          <label> E-mail </label>
-          <input 
-            placeholder={'Ex: alanbrazoes@gmail.com'}
-            onChange={onChange}
-            name={'email'}
+          <Input 
+            label={'E-mail'} 
+            placeholder={'Ex: alanbrazoes@gmail.com'} 
+            onchange={onChange} 
+            name={'email'} 
             value={form.email}
-          ></input>
+          />
 
           <label> Senha </label>
           <input 
