@@ -1,23 +1,10 @@
-import Loading from "../../../../components/Loading"
-import { useNavigate } from "react-router"
+import CardTrips from "../../../../components/CardTrips"
 
-const MainAdmHome = (props) => {
+const MainAdmHome = () => {
 
-  let navigate = useNavigate()
-
-  const viagens = props.states.trips === undefined ? 
-  <Loading /> : 
-  props.states.trips.map((v, i) => {
-    return (
-      <section key={i}>
-        <p> {v.name} </p> 
-        <button onClick={() => navigate(`/adm/trip-detail/${v.id}`)}> Candidatar </button>
-      </section>
-    )
-  })
   return (
     <main>
-      {viagens}
+      <CardTrips redirect={'details'}/>
     </main>
   )
 }

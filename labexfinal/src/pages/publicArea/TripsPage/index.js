@@ -1,12 +1,11 @@
 import { useContext, useEffect } from "react";
 
+import CardTrips from "../../../components/CardTrips";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTrips } from "../../../services";
-import HeaderTrips from "./components/HeaderTrips";
-import MainTrips from "./components/MainTrips";
 
 const TripsPage = () => {
-  const { states, setters } = useContext(GlobalStateContext)
+  const { setters } = useContext(GlobalStateContext)
 
   useEffect(() => {
     GetTrips(setters)
@@ -15,8 +14,12 @@ const TripsPage = () => {
   
   return (
     <>
-      <HeaderTrips />
-      <MainTrips states={states}/>
+      <header>
+        <h1> Trips </h1>
+      </header>
+      <main>
+        <CardTrips redirect={'application'}/>
+      </main>
     </>
   )
 }
