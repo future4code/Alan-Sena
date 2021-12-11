@@ -1,10 +1,10 @@
+/* eslint-disable no-unused-vars */
 import axios from "axios";
 
 export const GetTrips = async (setters) => {
   
   try {
     const response = await axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips`)
-    console.log(response.data.trips)
     setters.setTrips(response.data.trips)
   } catch (error) {
     console.log(error)
@@ -15,7 +15,6 @@ export const login = async ({ email, password }) => {
 
   let error
   let response
-  console.log(email, password)
   
   try {
     response = await axios.post('https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/login', 
@@ -44,6 +43,30 @@ export const GetTripDetail = async (setters, id) => {
     }})
 
     setters.setTrip(response.data.trip)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const CreateTripRequest = async ({ form }) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips`
+  const headers = {
+    headers: {
+      auth: window.localStorage.getItem('token')
+    }
+  }
+
+  const body = {
+    name: form.name,
+    planet: form.planet,
+    date: form.date,
+    description: form.description,
+    durationInDays: form.durationInDays
+  }
+  
+  try {
+    const response = await axios.post(url, body, headers)
+    alert('viagem criada')
   } catch (error) {
     console.log(error)
   }

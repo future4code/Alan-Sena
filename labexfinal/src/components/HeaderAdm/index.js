@@ -1,10 +1,14 @@
+import { useContext } from "react"
 import { useNavigate } from "react-router"
+import GlobalStateContext from "../../global/GlobalStateContext"
 
 const HeaderAdm = (props) => {
 
   const navigate = useNavigate()
+  const { setters } = useContext(GlobalStateContext)
 
   const go = () => {
+    setters.setTrip({})
     props.redirect === 'Home' ? navigate('/adm/home') : navigate('/adm/create-trip')
   }
 

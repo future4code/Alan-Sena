@@ -1,9 +1,10 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
+
+import MainDetails from "./components/MainDetails";
 import HeaderAdm from "../../../components/HeaderAdm";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTripDetail } from "../../../services";
-import MainDetails from "./components/MainDetails";
 
 const TripDetailsPage = () => {
 

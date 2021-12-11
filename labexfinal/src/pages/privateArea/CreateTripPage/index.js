@@ -2,6 +2,7 @@ import HeaderAdm from '../../../components/HeaderAdm';
 import Input from '../../../components/Input'
 
 import { useForm } from '../../../hooks/useForm';
+import { CreateTripRequest } from '../../../services';
 
 const CreateTripPage = () => {
 
@@ -15,14 +16,7 @@ const CreateTripPage = () => {
 
   const submit = async (e) => {
     e.preventDefault()
-    console.log(form)
-    // const response = await createTrip({
-    //   name: form.name, 
-    //   planet: form.planet, 
-    //   date: form.date, 
-    //   description: form.description, 
-    //   durationInDays: form.durationInDays
-    // })
+    const response = await CreateTripRequest({ form })
   }
 
   return (
