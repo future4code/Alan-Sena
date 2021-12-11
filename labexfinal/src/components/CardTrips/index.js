@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router"
-import GlobalStateContext from '../global/GlobalStateContext'
-import Loading from "./Loading"
+import GlobalStateContext from '../../global/GlobalStateContext'
+import Loading from "../Loading"
 
 const CardTrips = (props) => {
 
