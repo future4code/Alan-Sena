@@ -41,7 +41,7 @@ export const GetTripDetail = async (setters, id) => {
       headers: {
       auth: window.localStorage.getItem('token')
     }})
-
+    console.log(response.data)
     setters.setTrip(response.data.trip)
   } catch (error) {
     console.log(error)
@@ -67,6 +67,24 @@ export const CreateTripRequest = async ({ form }) => {
   try {
     const response = await axios.post(url, body, headers)
     alert('viagem criada')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const ApplyToTrip = async ( form, id ) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${id}/apply`
+  const body = {
+    name: form.name,
+    age: form.age,
+    applicationText: form.applicationText,
+    profession: form.profession,
+    country: form.country
+  }
+
+  try {
+    const response = await axios.post(url, body)
+    alert('Candidatura feita!')
   } catch (error) {
     console.log(error)
   }
