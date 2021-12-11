@@ -2,8 +2,8 @@ import { useContext, useEffect } from "react";
 
 import { GetTrips } from "../../../services";
 import MainAdmHome from "./components/MainAdmHome";
-import HeaderAdmHome from "./components/HeadrAdmHome";
 import GlobalStateContext from "../../../global/GlobalStateContext";
+import HeaderAdm from "../../../components/HeaderAdm";
 
 const AdmHomePage = () => {
 
@@ -15,7 +15,7 @@ const AdmHomePage = () => {
 
   return (
     <>
-      <HeaderAdmHome />
+      <HeaderAdm redirect={'Criar viagem'}/>
       <MainAdmHome states={states}/>
     </>
   )

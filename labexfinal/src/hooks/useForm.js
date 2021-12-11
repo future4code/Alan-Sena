@@ -10,5 +10,5 @@ export const useForm = (inicialState) => {
       setForm({...form, [fieldName]: newValue})
     }
 
-    return [form, onChange]
+    return [ form, onChange ]
 }

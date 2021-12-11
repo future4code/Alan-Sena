@@ -7,7 +7,7 @@ const Input = (props) => {
         placeholder={props.placeholder} 
         name={props.name} 
         type={props.type || 'text'}
-        onChange={props.onchange}
+        onChange={props.onChange}
         value={props.value}
       ></input> 
     </>

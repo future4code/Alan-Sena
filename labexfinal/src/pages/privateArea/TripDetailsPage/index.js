@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
+import HeaderAdm from "../../../components/HeaderAdm";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTripDetail } from "../../../services";
-import HeadersDetails from "./components/HeadersDetails";
 import MainDetails from "./components/MainDetails";
 
 const TripDetailsPage = () => {
@@ -16,7 +16,7 @@ const TripDetailsPage = () => {
 
   return (
     <>
-     <HeadersDetails />
+     <HeaderAdm redirect={'Home'}/>
      <MainDetails states={states}/>
     </>
   )

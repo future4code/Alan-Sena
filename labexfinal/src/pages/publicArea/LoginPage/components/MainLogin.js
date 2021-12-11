@@ -26,22 +26,23 @@ const MainLogin = () => {
       <form onSubmit={submit}>
         <fieldset>
           <legend> Dados do usuário </legend>
+
           <Input 
             label={'E-mail'} 
             placeholder={'Ex: alanbrazoes@gmail.com'} 
-            onchange={onChange} 
+            onChange={onChange} 
             name={'email'} 
             value={form.email}
           />
 
-          <label> Senha </label>
-          <input 
+          <Input 
+            label={'Senha'}
             placeholder={'Senha'} 
             type={'password'}
             onChange={onChange}
             name={'password'}
             value={form.password}
-          ></input>
+          />
           
           <button type={'submit'}> Entrar </button>
 
