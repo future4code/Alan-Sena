@@ -4,7 +4,7 @@ const MainAdmHome = () => {
 
   return (
     <main>
-      <CardTrips redirect={'details'}/>
+      <CardTrips redirect={'details'} adm={true}/>
     </main>
   )
 }

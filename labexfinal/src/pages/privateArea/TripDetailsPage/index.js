@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useContext, useEffect } from "react";
 import { useParams } from "react-router";
 
@@ -12,7 +13,7 @@ const TripDetailsPage = () => {
   const { states, setters } = useContext(GlobalStateContext)
 
   useEffect(() => {
-    GetTripDetail(setters, param.id)
+    GetTripDetail(param.id, setters)
   }, [])
 
   return (

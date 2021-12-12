@@ -9,6 +9,13 @@ export const CandidateCard = styled.section`
   flex-direction: column;
 
   width: fit-content;
+  min-width: 20%;
+  max-width: 20%;
+
+  p {
+    margin: 4px 0;
+    flex-wrap: wrap;
+  }
 
   button {
     border: none;

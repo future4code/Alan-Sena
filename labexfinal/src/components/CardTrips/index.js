@@ -1,11 +1,12 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router"
 import GlobalStateContext from '../../global/GlobalStateContext'
+import { del } from "../../services"
 import Loading from "../Loading"
 
 const CardTrips = (props) => {
 
-  const { states } = useContext(GlobalStateContext)
+  const { states, setters } = useContext(GlobalStateContext)
   const navigate = useNavigate()
 
   const buttons = (id) => {
@@ -25,6 +26,7 @@ const CardTrips = (props) => {
         <button 
           onClick={() => buttons(v.id)}
         >{props.redirect === 'application' ? 'Candidatar' : 'Detalhes'}</button>
+        {props.adm === true ? <button onClick={() => del(v.id, setters)}> Deletar </button> : <></>}
       </section>
     )
   })

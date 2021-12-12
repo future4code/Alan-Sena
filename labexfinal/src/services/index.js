@@ -1,5 +1,7 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
+import { useContext } from "react";
+import GlobalStateContext from "../global/GlobalStateContext";
 
 export const GetTrips = async (setters) => {
   
@@ -12,7 +14,7 @@ export const GetTrips = async (setters) => {
 }
 
 export const login = async ({ email, password }) => {
-
+  
   let error
   let response
   
@@ -26,14 +28,15 @@ export const login = async ({ email, password }) => {
     alert(e.response.data.message)
     error = e.response
   }
-
+  
   return { 
     token: response && response.data.token,
     error
   }
 }
 
-export const GetTripDetail = async (setters, id) => {
+export const GetTripDetail = async (id, set) => {
+
   try {
     const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trip/${id}`
 
@@ -41,8 +44,7 @@ export const GetTripDetail = async (setters, id) => {
       headers: {
       auth: window.localStorage.getItem('token')
     }})
-    console.log(response.data)
-    setters.setTrip(response.data.trip)
+    set.setTrip(response.data.trip)
   } catch (error) {
     console.log(error)
   }
@@ -85,6 +87,39 @@ export const ApplyToTrip = async ( form, id ) => {
   try {
     const response = await axios.post(url, body)
     alert('Candidatura feita!')
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const decide = async (idCandidate, idTrip, condition, set) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${idTrip}/candidates/${idCandidate}/decide`
+  const body = {
+    approve: condition
+  }
+  try {
+    const response = await axios.put(url, body, {
+      headers: {
+        auth: window.localStorage.getItem('token')
+      }
+    })
+    alert('deu certo!!')
+    GetTripDetail(idTrip, set)
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export const del = async (id, setters) => {
+  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${id}`
+  try {
+    const reponse = await axios.delete(url, {
+      headers: {
+        auth: window.localStorage.getItem('token')
+      }
+    })
+    alert('viagem deletada.')
+    GetTrips(setters)
   } catch (error) {
     console.log(error)
   }
