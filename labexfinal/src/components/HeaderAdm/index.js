@@ -13,6 +13,7 @@ const HeaderAdm = (props) => {
   }
 
   const logout = () => {
+    window.localStorage.clear('token')
     navigate('/login')
   }
 

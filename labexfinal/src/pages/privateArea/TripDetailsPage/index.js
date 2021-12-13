@@ -6,8 +6,10 @@ import MainDetails from "./components/MainDetails";
 import HeaderAdm from "../../../components/HeaderAdm";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTripDetail } from "../../../services";
+import useProtect from "../../../hooks/useProtect";
 
 const TripDetailsPage = () => {
+  useProtect()
 
   const param = useParams()
   const { states, setters } = useContext(GlobalStateContext)

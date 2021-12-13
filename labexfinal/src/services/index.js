@@ -24,6 +24,7 @@ export const login = async ({ email, password }) => {
       email, 
       password 
     })
+    
   } catch (e) {
     alert(e.response.data.message)
     error = e.response

@@ -3,9 +3,11 @@ import HeaderAdm from '../../../components/HeaderAdm';
 import Input from '../../../components/Input'
 
 import { useForm } from '../../../hooks/useForm';
+import useProtect from '../../../hooks/useProtect';
 import { CreateTripRequest } from '../../../services';
 
 const CreateTripPage = () => {
+  useProtect()
 
   const [ form, onChange ] = useForm({
     name: '',

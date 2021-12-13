@@ -3,9 +3,15 @@ import { useForm } from "../../../../hooks/useForm";
 import { login } from "../../../../services";
 
 import Input from '../../../../components/Input'
+import { useEffect } from "react";
 
 const MainLogin = () => {
   const navigate = useNavigate()
+
+  useEffect(() => {
+    const token = window.localStorage.getItem('token')
+    if (token) navigate('/adm/home')
+  }, [])
 
   const [ form, onChange ] = useForm({
     email: '',
