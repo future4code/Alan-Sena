@@ -76,7 +76,7 @@ export const CreateTripRequest = async ({ form }) => {
 }
 
 export const ApplyToTrip = async ( form, id ) => {
-  const url = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${id}/apply`
+  const urlApply = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${id}/apply`
   const body = {
     name: form.name,
     age: form.age,
@@ -86,7 +86,7 @@ export const ApplyToTrip = async ( form, id ) => {
   }
 
   try {
-    const response = await axios.post(url, body)
+    const response = await axios.post(urlApply, body)
     alert('Candidatura feita!')
   } catch (error) {
     console.log(error)

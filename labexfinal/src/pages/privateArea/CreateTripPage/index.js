@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import HeaderAdm from '../../../components/HeaderAdm';
 import Input from '../../../components/Input'
+import { InputsContainer } from './style'
 
 import { useForm } from '../../../hooks/useForm';
 import useProtect from '../../../hooks/useProtect';
@@ -27,7 +28,7 @@ const CreateTripPage = () => {
       <HeaderAdm redirect={'Home'}/>
       <main>
         <form onSubmit={submit}>
-          <fieldset>
+          <InputsContainer>
             <legend>Criar viagem</legend>
             <Input 
               placeholder={'Ex: Astrodev'}
@@ -65,7 +66,7 @@ const CreateTripPage = () => {
               value={form.durationInDays}
             />
             <button type={'submit'}>Criar</button>
-          </fieldset>
+          </InputsContainer>
         </form>
       </main>
     </>
