@@ -10,8 +10,8 @@ const HeaderLogin = () => {
 
   return (
     <header>
-      <h1> Login </h1>
       <button onClick={goHome}> Home </button>
+      <h1> Login </h1>
     </header>
   )
 }

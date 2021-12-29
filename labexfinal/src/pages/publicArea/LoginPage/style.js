@@ -1,6 +1,6 @@
-import styled from 'styled-components'
+import styled from "styled-components"; 
 
-export const InputInd = styled.form`
+export const LoginStyle = styled.form`
   display: flex;
   justify-content: center;
 
@@ -32,8 +32,5 @@ export const InputInd = styled.form`
     transition: 0.2s;
     }
   }
-
-  select {
-    margin: 2px 0 10px 0;
-  }
 `
+

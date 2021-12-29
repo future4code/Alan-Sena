@@ -5,6 +5,7 @@ import { login } from "../../../../services";
 
 import Input from '../../../../components/Input'
 import { useEffect } from "react";
+import { LoginStyle } from "../style";
 
 const MainLogin = () => {
   const navigate = useNavigate()
@@ -30,9 +31,9 @@ const MainLogin = () => {
 
   return (
     <main>
-      <form onSubmit={submit}>
+      <LoginStyle onSubmit={submit}>
         <fieldset>
-          <legend> Dados do usuário </legend>
+          <legend> Insira seus dados de login </legend>
 
           <Input 
             label={'E-mail'} 
@@ -54,7 +55,7 @@ const MainLogin = () => {
           <button type={'submit'}> Entrar </button>
 
         </fieldset>
-      </form>
+      </LoginStyle>
     </main>
   )
 }
