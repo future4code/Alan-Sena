@@ -1,6 +1,7 @@
 import { useContext } from "react"
 import { useNavigate } from "react-router"
 import GlobalStateContext from '../../global/GlobalStateContext'
+import { Card } from "./style"
 import { del } from "../../services"
 import Loading from "../Loading"
 
@@ -21,13 +22,15 @@ const CardTrips = (props) => {
   <Loading /> : 
   states.trips.map((v, i) => {
     return (
-      <section key={i}>
-        <p> {v.name} </p> 
+      <Card key={i}>
+        <h3> {v.name} </h3>
+        <p> {v.description} </p> 
+
         <button 
           onClick={() => buttons(v.id)}
         >{props.redirect === 'application' ? 'Candidatar' : 'Detalhes'}</button>
         {props.adm === true ? <button onClick={() => del(v.id, setters)}> Deletar </button> : <></>}
-      </section>
+      </Card>
     )
   })
 

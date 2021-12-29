@@ -1,7 +1,5 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
-import { useContext } from "react";
-import GlobalStateContext from "../global/GlobalStateContext";
 
 export const GetTrips = async (setters) => {
   
@@ -75,7 +73,7 @@ export const CreateTripRequest = async ({ form }) => {
   }
 }
 
-export const ApplyToTrip = async ( form, id ) => {
+export const ApplyToTrip = async ( form, id, set ) => {
   const urlApply = `https://us-central1-labenu-apis.cloudfunctions.net/labeX/alan-banu/trips/${id}/apply`
   const body = {
     name: form.name,
@@ -87,9 +85,9 @@ export const ApplyToTrip = async ( form, id ) => {
 
   try {
     const response = await axios.post(urlApply, body)
-    alert('Candidatura feita!')
+    set('sucess')
   } catch (error) {
-    console.log(error)
+    set('error')
   }
 }
 

@@ -5,13 +5,13 @@ const HeaderLogin = () => {
   let navigate = useNavigate()
 
   const goHome = () => {
-    navigate(-1)
+    navigate("/")
   }
 
   return (
     <header>
       <h1> Login </h1>
-      <button onClick={goHome}> Voltar </button>
+      <button onClick={goHome}> Home </button>
     </header>
   )
 }

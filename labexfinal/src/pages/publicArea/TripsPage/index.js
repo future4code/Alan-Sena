@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import CardTrips from "../../../components/CardTrips";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTrips } from "../../../services";
+import { MainTrips } from "../../../components/CardTrips/style";
 
 const TripsPage = () => {
   const { setters } = useContext(GlobalStateContext)
