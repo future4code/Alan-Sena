@@ -1,6 +1,5 @@
-import HeaderHome from "./components/HeaderHome";
-import MainHome from "./components/MainHome";
-import { HomeStyle } from "./style";
+import HeaderHome from "@components/HeaderHome";
+import MainHome from "@components/MainHome";
 
 const HomePage = () => {
 

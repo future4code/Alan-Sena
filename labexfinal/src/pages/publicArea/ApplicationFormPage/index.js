@@ -1,5 +1,5 @@
-import HeaderApplication from "./components/HeaderApplication";
-import MainApplication from "./components/MainApplication";
+import HeaderApplication from "@components/HeaderApplication";
+import MainApplication from "@components/MainApplication";
 
 const ApplicationFormPage = () => {
 

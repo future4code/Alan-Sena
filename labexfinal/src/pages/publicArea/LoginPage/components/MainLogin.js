@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useNavigate } from "react-router";
-import { useForm } from "../../../../hooks/useForm";
-import { login } from "../../../../services";
+import { useForm } from "@hooks/useForm";
+import { login } from "@services";
 
 import Input from '../../../../components/Input'
 import { useEffect } from "react";
