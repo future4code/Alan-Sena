@@ -9,6 +9,6 @@
       "@router/*": [ "./src/router/*" ],
       "@services/*": [ "./src/services/*" ],
       "@theme": [ "./src/theme" ]
-    },
-  },
+    }
+  }
 }
