@@ -1,8 +1,10 @@
+import { StyleHeader } from "../style"
+
 const HeaderAdmHome = () => {
   return (
-    <header>
+    <StyleHeader>
       <h1>Area Administrativa</h1>
-    </header>
+    </StyleHeader>
   )
 }
 

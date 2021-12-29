@@ -27,8 +27,8 @@ const CreateTripPage = () => {
     <>
       <HeaderAdm redirect={'Home'}/>
       <main>
-        <form onSubmit={submit}>
-          <InputsContainer>
+        <InputsContainer onSubmit={submit}>
+          <fieldset>
             <legend>Criar viagem</legend>
             <Input 
               placeholder={'Ex: Astrodev'}
@@ -66,8 +66,8 @@ const CreateTripPage = () => {
               value={form.durationInDays}
             />
             <button type={'submit'}>Criar</button>
-          </InputsContainer>
-        </form>
+          </fieldset>
+        </InputsContainer>
       </main>
     </>
   )

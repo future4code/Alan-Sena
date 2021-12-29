@@ -1,4 +1,5 @@
 import Loading from '../../../../components/Loading'
+import { StyleMain, StyleSection } from '../style'
 import Candidates from './Candidates'
 
 const MainDetails = (props) => {
@@ -7,14 +8,16 @@ const MainDetails = (props) => {
   const teste = trip === undefined ? 
   <Loading /> : 
   <>
-    <h2> {trip.name} </h2>
-    <Candidates candidates={trip.candidates}/>
+    <h2 > {trip.name} </h2>
+    <StyleSection>
+      <Candidates candidates={trip.candidates}/>
+    </StyleSection>
   </>
   
   return (
-    <main>
+    <StyleMain>
       {teste}
-    </main>
+    </StyleMain>
   )
 }
 

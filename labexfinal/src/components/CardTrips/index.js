@@ -33,7 +33,7 @@ const CardTrips = (props) => {
       </Card>
     )
   })
-
+  console.log(states.trips)
   return (
     <>
       {tripsList}

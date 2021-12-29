@@ -2,6 +2,7 @@ import { useContext } from "react"
 import { useNavigate } from "react-router"
 
 import GlobalStateContext from "../../global/GlobalStateContext"
+import { StyleHeader } from "../../pages/privateArea/AdmHomePage/style"
 
 const HeaderAdm = (props) => {
 
@@ -19,13 +20,13 @@ const HeaderAdm = (props) => {
   }
 
   return (
-    <header>
+    <StyleHeader>
       <h1> Area Administrativa </h1>
       <nav>
         <button onClick={go}>{props.redirect}</button>
         {props.redirect === 'Criar viagem' ? <button onClick={logout}> Logout </button> : <></> }
       </nav>
-    </header>
+    </StyleHeader>
   )
 }
 

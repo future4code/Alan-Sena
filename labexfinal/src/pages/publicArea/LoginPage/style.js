@@ -34,3 +34,10 @@ export const LoginStyle = styled.form`
   }
 `
 
+export const StyleHeader = styled.header`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+`
+
