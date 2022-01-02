@@ -102,7 +102,6 @@ export const decide = async (idCandidate, idTrip, condition, set) => {
         auth: window.localStorage.getItem('token')
       }
     })
-    alert('deu certo!!')
     GetTripDetail(idTrip, set)
   } catch (error) {
     console.log(error)
@@ -117,7 +116,6 @@ export const del = async (id, setters) => {
         auth: window.localStorage.getItem('token')
       }
     })
-    alert('viagem deletada.')
     GetTrips(setters)
   } catch (error) {
     console.log(error)

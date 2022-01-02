@@ -1,5 +1,10 @@
 import styled from 'styled-components'
 
+export const MainAppli = styled.main`
+  display: flex;
+  flex-direction: column;
+`
+
 export const InputInd = styled.form`
   display: flex;
   justify-content: center;

@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { useForm } from '../../../../hooks/useForm';
 import Input from "../../../../components/Input";
-import { InputInd } from "../style";
+import { InputInd, MainAppli } from "../style";
 import { ApplyToTrip } from '../../../../services';
 import Result from '../../../../components/ErrorOrSucess';
 
@@ -37,7 +37,7 @@ const MainApplication = () => {
   }
   
   return (
-    <main>
+    <MainAppli>
       <InputInd onSubmit={submit}>
         <fieldset>
           <legend> Candidatar </legend>
@@ -94,7 +94,7 @@ const MainApplication = () => {
       </InputInd>
 
       {validate()}
-    </main>
+    </MainAppli>
   )
 }
 
