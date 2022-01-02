@@ -1,5 +1,5 @@
-import HeaderHome from "@components/HeaderHome";
-import MainHome from "@components/MainHome";
+import HeaderHome from "../HomePage/components/HeaderHome";
+import MainHome from "../HomePage/components/MainHome";
 
 const HomePage = () => {
 

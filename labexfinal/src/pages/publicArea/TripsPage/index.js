@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 
-import CardTrips from "@components/CardTrips";
-import GlobalStateContext from "@global/GlobalStateContext";
-import { GetTrips } from "@services";
+import CardTrips from "../../../components/CardTrips";
+import GlobalStateContext from "../../../global/GlobalStateContext";
+import { GetTrips } from "../../../services";
 
 const TripsPage = () => {
   const { setters } = useContext(GlobalStateContext)
