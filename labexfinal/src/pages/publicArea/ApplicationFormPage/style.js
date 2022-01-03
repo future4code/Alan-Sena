@@ -5,6 +5,13 @@ export const MainAppli = styled.main`
   flex-direction: column;
 `
 
+export const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+`
+
 export const InputInd = styled.form`
   display: flex;
   justify-content: center;

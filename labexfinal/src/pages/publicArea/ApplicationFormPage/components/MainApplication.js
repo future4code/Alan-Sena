@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useParams } from 'react-router';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
+
 
 import { useForm } from '../../../../hooks/useForm';
 import Input from "../../../../components/Input";
@@ -37,15 +37,11 @@ const MainApplication = () => {
     }
   }
 
-  const navigate = useNavigate()
 
-  const goBack = () => {
-    navigate(-1)
-  }
   
   return (
     <>
-      <button onClick={goBack}> Voltar </button>
+
       <MainAppli>
         <InputInd onSubmit={submit}>
           <fieldset>

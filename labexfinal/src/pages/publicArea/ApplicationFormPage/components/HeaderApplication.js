@@ -1,9 +1,18 @@
+import { useNavigate } from 'react-router-dom'
+import { Header } from '../style'
+
 const HeaderApplication = (props) => {
+  const navigate = useNavigate()
+
+  const goBack = () => {
+    navigate(-1)
+  }
   
   return (
-    <header>
+    <Header>
       <h1> Candidatura a viagem </h1>
-    </header>
+      <button onClick={goBack}> Voltar </button>
+    </Header>
   )
 }
 

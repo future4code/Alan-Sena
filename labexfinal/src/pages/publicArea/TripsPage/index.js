@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import CardTrips from "../../../components/CardTrips";
 import GlobalStateContext from "../../../global/GlobalStateContext";
 import { GetTrips } from "../../../services";
+import { Header } from "./style";
 
 const TripsPage = () => {
   const { setters } = useContext(GlobalStateContext)
@@ -21,11 +22,11 @@ const TripsPage = () => {
   
   return (
     <>
-      <header>
+      <Header>
         <h1> Trips </h1>
-      </header>
+        <button onClick={goBack}> Voltar </button>
+      </Header>
 
-      <button onClick={goBack}> Voltar </button>
       
       <main>
         <CardTrips redirect={'application'}/>
