@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useParams } from 'react-router';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
 
 import { useForm } from '../../../../hooks/useForm';
 import Input from "../../../../components/Input";
@@ -35,66 +36,75 @@ const MainApplication = () => {
       return <Result result={'sucess'} set={setReque}/>
     }
   }
+
+  const navigate = useNavigate()
+
+  const goBack = () => {
+    navigate(-1)
+  }
   
   return (
-    <MainAppli>
-      <InputInd onSubmit={submit}>
-        <fieldset>
-          <legend> Candidatar </legend>
+    <>
+      <button onClick={goBack}> Voltar </button>
+      <MainAppli>
+        <InputInd onSubmit={submit}>
+          <fieldset>
+            <legend> Candidatar </legend>
 
-          <Input 
-            onChange={onChange}
-            value={form.name}
-            name={'name'} 
-            label={'Nome'} 
-            placeholder={'Nome'}
-          />
-          
-          <Input 
-            onChange={onChange}
-            value={form.age}
-            name={'age'} 
-            label={'Idade'} 
-            placeholder={'Idade'} 
-            type={'number'}
-          />
+            <Input 
+              onChange={onChange}
+              value={form.name}
+              name={'name'} 
+              label={'Nome'} 
+              placeholder={'Nome'}
+            />
+            
+            <Input 
+              onChange={onChange}
+              value={form.age}
+              name={'age'} 
+              label={'Idade'} 
+              placeholder={'Idade'} 
+              type={'number'}
+            />
 
-          <Input 
-            onChange={onChange}
-            value={form.profession}
-            name={'profession'} 
-            label={'Profissão'} 
-            placeholder={'Ex: Advogado'} 
-          />
+            <Input 
+              onChange={onChange}
+              value={form.profession}
+              name={'profession'} 
+              label={'Profissão'} 
+              placeholder={'Ex: Advogado'} 
+            />
 
-          <Input 
-            onChange={onChange}
-            value={form.applicationText}
-            name={'applicationText'} 
-            label={'Texto de candidatura'} 
-            placeholder={'Texto'} 
-          />
+            <Input 
+              onChange={onChange}
+              value={form.applicationText}
+              name={'applicationText'} 
+              label={'Texto de candidatura'} 
+              placeholder={'Texto'} 
+            />
 
-          <label> País </label>
-          <select name={'country'} onChange={onChange}>
-            <option value={''}> Selecione seu país </option>
-            <option value={'Brasil'}> Brasil </option>
-            <option value={'EUA'}> EUA </option>
-            <option value={'Argentina'}> Argentina </option>
-            <option value={'Angola'}> Angola </option>
-            <option value={'China'}> China </option>
-            <option value={'França'}> França </option>
-            <option value={'Costa Rica'}> Costa Rica </option>
-            <option value={'Japão'}> Japão </option>
-          </select>
+            <label> País </label>
+            <select name={'country'} onChange={onChange}>
+              <option value={''}> Selecione seu país </option>
+              <option value={'Brasil'}> Brasil </option>
+              <option value={'EUA'}> EUA </option>
+              <option value={'Argentina'}> Argentina </option>
+              <option value={'Angola'}> Angola </option>
+              <option value={'China'}> China </option>
+              <option value={'França'}> França </option>
+              <option value={'Costa Rica'}> Costa Rica </option>
+              <option value={'Japão'}> Japão </option>
+            </select>
 
-          <button type={'submit'}>Candidatar</button>
+            <button type={'submit'}>Candidatar</button>
 
-        </fieldset>
-      </InputInd>
+          </fieldset>
+        </InputInd>
 
-      {validate()}
-    </MainAppli>
+        {validate()}
+      </MainAppli>
+    </>
   )
 }
 

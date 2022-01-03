@@ -31,35 +31,34 @@ const CreateTripPage = () => {
           <fieldset>
             <legend>Criar viagem</legend>
             <Input 
-              placeholder={'Ex: Astrodev'}
+              placeholder={'Ex: Volta a lua'}
               name={'name'} 
               label={'Nome'}
               onChange={onChange}
               value={form.name}
             />
             <Input 
-              placeholder={'Ex: Astrodev'}
+              placeholder={'Ex: Plutão'}
               name={'planet'}
               label={'Planeta'}
               onChange={onChange}
               value={form.planet}
             />
             <Input 
-              placeholder={'Ex: Astrodev'}
+              placeholder={'Ex: 21/12/2034'}
               name={'date'}
               label={'Data'}
               onChange={onChange}
               value={form.date}
             />
             <Input 
-              placeholder={'Ex: Astrodev'}
               name={'description'}
               label={'Descrição'}
               onChange={onChange}
               value={form.description}
             />
             <Input 
-              placeholder={'Ex: Astrodev'}
+              placeholder={'Ex: 24'}
               name={'durationInDays'}
               label={'Duração em dias'}
               onChange={onChange}
